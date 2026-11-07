@@ -1,0 +1,29 @@
+schema: halbench-dataset-v1
+system_id: buck_converter
+name: Buck Converter
+source:
+  work: FaMoS
+  repo_url: https://doi.org/10.5281/zenodo.10657936
+  artifact_path: ExampleSystems/BuckConverter
+  license: MIT
+  platform: matlab
+  data_provided: true
+data_format: state-only
+type: synthetic
+num_modes: 3
+dim:
+  input: 0
+  output: 2
+dynamics: affine
+dynamics_order: 1st
+guard: linear
+reset: 'no'
+variables:
+  states:
+  - il
+  - vc
+  inputs: []
+time_unit: s
+model_description: sx
+notes:
+- The model has three physical modes.

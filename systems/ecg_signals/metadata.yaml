@@ -1,0 +1,30 @@
+schema: halbench-dataset-v1
+system_id: ecg_signals
+name: ECG Signals
+source:
+  work: HySynth
+  repo_url: https://github.com/HySynth/HySynth
+  commit: 6bcb20c
+  artifact_path: data/real_data/datasets/ekg_data
+  license: MIT
+  platform: python
+  data_provided: true
+data_format: state-only
+type: real-world
+num_modes: -1
+dim:
+  input: 0
+  output: 1
+dynamics: nonlinear
+dynamics_order: unknown
+guard: implicit
+reset: 'no'
+variables:
+  states:
+  - x1
+  inputs: []
+time_unit: unknown
+model_description: none
+notes:
+- The three traces are the ECG signals used in the selected HySynth experiment and
+  originate from PhysioBank.

@@ -1,0 +1,38 @@
+schema: halbench-dataset-v1
+system_id: cooperative_vehicles
+name: Cooperative Vehicles
+source:
+  work: hautlearn
+  repo_url: https://github.com/verivital/hautlearn
+  commit: f867117
+  artifact_path: example/other/cooperative_vehicles
+  license: unknown
+  platform: matlab_simulink
+  data_provided: true
+data_format: input-output
+type: synthetic
+num_modes: 2
+dim:
+  input: 1
+  output: 9
+dynamics: linear
+dynamics_order: 1st
+guard: fixed-time
+reset: 'no'
+variables:
+  states:
+  - e1
+  - e1prime
+  - a1
+  - e2
+  - e2prime
+  - a2
+  - e3
+  - e3prime
+  - a3
+  inputs:
+  - aL
+time_unit: s
+model_description: sx
+notes:
+- The model switches every two time units.

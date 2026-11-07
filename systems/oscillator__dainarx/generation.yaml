@@ -1,0 +1,51 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: oscillator__dainarx
+version: 1
+initial_origin: benchmark-extension
+states:
+- x1
+- x2
+outputs:
+- x1
+- x2
+inputs: {}
+initial:
+  components:
+  - mode: '1'
+    draws:
+      x1:
+        uniform:
+        - -1.5707963267948966
+        - 0.0
+      x2:
+        uniform:
+        - -3.1622776601683795
+        - 3.1622776601683795
+    state:
+      x1: x1
+      x2: x2
+    mode_by:
+      predicate: cos(x1)-x2/10-.7 < 0
+      'true': '1'
+      'false': '2'
+defaults:
+  duration: 1.0
+  sample_period: 0.001
+  max_step: 0.01
+state_scales:
+- 1.6
+- 3.2
+measurement_scales:
+- 1.6
+- 3.2
+process:
+  channels:
+  - x2
+  scales:
+  - 3.2
+  interval: 0.01
+observation_events: {}
+acceptance: null
+initial_basis: The initial region uses x1 in [-pi/2, 0] and x2 in [-sqrt(10), sqrt(10)],
+  with the initial mode selected by cos(x1)-x2/10-0.7.

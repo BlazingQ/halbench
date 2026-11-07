@@ -1,0 +1,133 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: cooperative_vehicles
+version: 1
+initial_origin: benchmark-extension
+states:
+- e1
+- e1prime
+- a1
+- e2
+- e2prime
+- a2
+- e3
+- e3prime
+- a3
+- tau
+outputs:
+- e1
+- e1prime
+- a1
+- e2
+- e2prime
+- a2
+- e3
+- e3prime
+- a3
+inputs:
+  aL:
+    kind: sine
+    offset:
+    - -4
+    - -4
+    amplitude:
+    - 3
+    - 5
+    frequency:
+    - 0.5
+    - 1.5
+    phase:
+    - 0
+    - 6.283185307179586
+initial:
+  components:
+  - mode: '1'
+    draws:
+      e1:
+        uniform:
+        - -1.0
+        - 1.0
+      e1prime:
+        uniform:
+        - -1.0
+        - 1.0
+      a1:
+        uniform:
+        - -1.0
+        - 1.0
+      e2:
+        uniform:
+        - -1.0
+        - 1.0
+      e2prime:
+        uniform:
+        - -1.0
+        - 1.0
+      a2:
+        uniform:
+        - -1.0
+        - 1.0
+      e3:
+        uniform:
+        - -1.0
+        - 1.0
+      e3prime:
+        uniform:
+        - -1.0
+        - 1.0
+      a3:
+        uniform:
+        - -1.0
+        - 1.0
+      tau:
+        uniform:
+        - 0.0
+        - 0.0
+    state:
+      e1: e1
+      e1prime: e1prime
+      a1: a1
+      e2: e2
+      e2prime: e2prime
+      a2: a2
+      e3: e3
+      e3prime: e3prime
+      a3: a3
+      tau: tau
+defaults:
+  duration: 10.0
+  sample_period: 0.05
+  max_step: 0.1
+state_scales:
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 2
+measurement_scales:
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+- 1
+process:
+  channels:
+  - a1
+  - a2
+  - a3
+  scales:
+  - 0.1
+  - 0.1
+  - 0.1
+  interval: 0.1
+observation_events: {}
+acceptance: null

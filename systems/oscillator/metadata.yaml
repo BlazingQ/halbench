@@ -1,0 +1,29 @@
+schema: halbench-dataset-v1
+system_id: oscillator
+name: Oscillator 2
+source:
+  work: HybridLearner
+  repo_url: https://github.com/rajgurung777/HybridLearner
+  commit: 34bda59
+  artifact_path: examples/oscillator
+  license: GPL-3.0
+  platform: matlab_simulink
+  data_provided: true
+data_format: state-only
+type: synthetic
+num_modes: 4
+dim:
+  input: 0
+  output: 2
+dynamics: affine
+dynamics_order: 1st
+guard: linear
+reset: 'no'
+variables:
+  states:
+  - x1
+  - x2
+  inputs: []
+time_unit: unknown
+model_description: sx
+notes: []

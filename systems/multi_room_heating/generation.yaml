@@ -1,0 +1,79 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: multi_room_heating
+version: 1
+initial_origin: benchmark-extension
+states:
+- x1
+- x2
+- x3
+- tau
+outputs:
+- x1
+- x2
+- x3
+inputs:
+  u:
+    kind: sine
+    offset:
+    - 5
+    - 10
+    amplitude:
+    - 2
+    - 5
+    frequency:
+    - 0.02
+    - 0.08
+    phase:
+    - 0
+    - 6.283185307179586
+initial:
+  components:
+  - mode: '4'
+    draws:
+      x1:
+        uniform:
+        - 15.0
+        - 22.0
+      x2:
+        uniform:
+        - 15.0
+        - 22.0
+      x3:
+        uniform:
+        - 15.0
+        - 22.0
+      tau:
+        uniform:
+        - 0.0
+        - 0.0
+    state:
+      x1: x1
+      x2: x2
+      x3: x3
+      tau: tau
+defaults:
+  duration: 1000.0
+  sample_period: 0.1
+  max_step: 10.0
+state_scales:
+- 20
+- 20
+- 20
+- 0.1
+measurement_scales:
+- 20
+- 20
+- 20
+process:
+  channels:
+  - x1
+  - x2
+  - x3
+  scales:
+  - 0.02
+  - 0.02
+  - 0.02
+  interval: 10.0
+observation_events: {}
+acceptance: null

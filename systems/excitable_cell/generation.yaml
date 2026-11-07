@@ -1,0 +1,34 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: excitable_cell
+version: 1
+initial_origin: source-region
+states: &id001
+- x1
+outputs: *id001
+inputs: {}
+initial:
+  components:
+  - mode: '1'
+    draws:
+      x1:
+        uniform:
+        - -76.0
+        - -74.0
+    state:
+      x1: x1
+defaults:
+  duration: 500.0
+  sample_period: 0.01
+  max_step: 5.0
+state_scales:
+- 120
+measurement_scales:
+- 120
+process:
+  channels: *id001
+  scales:
+  - 0.24
+  interval: 5.0
+observation_events: {}
+acceptance: null

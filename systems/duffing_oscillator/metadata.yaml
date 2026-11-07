@@ -1,0 +1,31 @@
+schema: halbench-dataset-v1
+system_id: duffing_oscillator
+name: Duffing Oscillator
+source:
+  work: Dainarx
+  repo_url: https://github.com/FICTION-ZJU/Dainarx
+  commit: 8a8f5dc
+  artifact_path: automata/non_linear/duffing.json
+  license: unknown
+  platform: python
+  data_provided: false
+data_format: input-output
+type: synthetic
+num_modes: 2
+dim:
+  input: 1
+  output: 1
+dynamics: polynomial
+dynamics_order: 2nd
+guard: nonlinear
+reset: 'yes'
+variables:
+  states:
+  - x
+  inputs:
+  - u
+time_unit: unknown
+model_description: sx
+notes:
+- Resets can change velocity while keeping the observed position continuous.
+- 'Absolute-value thresholds: abs(x) <= 0.8 (1 -> 2), abs(x) >= 1.2 (2 -> 1).'

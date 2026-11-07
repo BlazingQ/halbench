@@ -1,0 +1,61 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: heating_system_with_input
+version: 1
+initial_origin: benchmark-extension
+states: &id001
+- x1
+outputs: *id001
+inputs:
+  u:
+    kind: zoh
+    interval: 5.0
+    alternating: true
+    bounds:
+    - 0
+    - 1
+initial:
+  components:
+  - mode: '1'
+    draws:
+      u0:
+        choice:
+        - 0
+        - 1
+      z:
+        uniform:
+        - 0.0
+        - 1.0
+    state:
+      x1: 15+u0+10*z
+    input_start:
+      u: u0
+  - mode: '2'
+    draws:
+      u0:
+        choice:
+        - 0
+        - 1
+      z:
+        uniform:
+        - 0.0
+        - 1.0
+    state:
+      x1: 15+u0+10*z
+    input_start:
+      u: u0
+defaults:
+  duration: 20.0
+  sample_period: 0.01
+  max_step: 0.2
+state_scales:
+- 25
+measurement_scales:
+- 25
+process:
+  channels: *id001
+  scales:
+  - 1.25
+  interval: 0.2
+observation_events: {}
+acceptance: null

@@ -1,0 +1,43 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: simple_non_polynomial
+version: 1
+initial_origin: benchmark-extension
+states: &id001
+- x
+outputs:
+- x
+inputs: {}
+initial:
+  components:
+  - mode: '1'
+    draws:
+      x:
+        uniform:
+        - 3.0
+        - 10.0
+    state:
+      x: x
+  - mode: '2'
+    draws:
+      x:
+        uniform:
+        - 3.0
+        - 10.0
+    state:
+      x: x
+defaults:
+  duration: 60.0
+  sample_period: 0.01
+  max_step: 0.6
+state_scales:
+- 10
+measurement_scales:
+- 10
+process:
+  channels: *id001
+  scales:
+  - 0.16666666666666666
+  interval: 0.6
+observation_events: {}
+acceptance: null

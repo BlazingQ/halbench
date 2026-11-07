@@ -1,0 +1,30 @@
+schema: halbench-dataset-v1
+system_id: simple_non_polynomial
+name: Simple Non-Polynomial
+source:
+  work: Dainarx
+  repo_url: https://github.com/FICTION-ZJU/Dainarx
+  commit: 8a8f5dc
+  artifact_path: automata/non_linear/simple_non_poly.json
+  license: unknown
+  platform: python
+  data_provided: false
+data_format: state-only
+type: synthetic
+num_modes: 2
+dim:
+  input: 0
+  output: 1
+dynamics: nonlinear
+dynamics_order: 1st
+guard: linear
+reset: 'yes'
+variables:
+  states:
+  - x
+  inputs: []
+time_unit: unknown
+model_description: sx
+notes:
+- At x >= 10, the reset is x := x - 1. Samples at reset times contain the post-reset
+  value.

@@ -1,0 +1,43 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: oscillator
+version: 1
+initial_origin: source-region
+states: &id001
+- x1
+- x2
+outputs: *id001
+inputs: {}
+initial:
+  components:
+  - mode: '1'
+    draws:
+      x1:
+        uniform:
+        - 0.01
+        - 0.09
+      x2:
+        uniform:
+        - 0.01
+        - 0.09
+    state:
+      x1: x1
+      x2: x2
+defaults:
+  duration: 10.0
+  sample_period: 0.01
+  max_step: 0.1
+state_scales:
+- 1
+- 1
+measurement_scales:
+- 1
+- 1
+process:
+  channels: *id001
+  scales:
+  - 0.1
+  - 0.1
+  interval: 0.1
+observation_events: {}
+acceptance: null

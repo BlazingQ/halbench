@@ -1,0 +1,178 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: complex_tank
+version: 1
+initial_origin: benchmark-extension
+states: &id001
+- x1
+- x2
+- x3
+outputs: *id001
+inputs: {}
+initial:
+  components:
+  - mode: '0'
+    draws:
+      x1:
+        uniform:
+        - 15.0
+        - 25.0
+      x2:
+        uniform:
+        - 15.0
+        - 25.0
+      x3:
+        uniform:
+        - 15.0
+        - 25.0
+    state:
+      x1: x1
+      x2: x2
+      x3: x3
+  - mode: '1'
+    draws:
+      x1:
+        uniform:
+        - 15.0
+        - 25.0
+      x2:
+        uniform:
+        - 15.0
+        - 25.0
+      x3:
+        uniform:
+        - 5.0
+        - 20.0
+    state:
+      x1: x1
+      x2: x2
+      x3: x3
+  - mode: '2'
+    draws:
+      x1:
+        uniform:
+        - 15.0
+        - 25.0
+      x2:
+        uniform:
+        - 5.0
+        - 20.0
+      x3:
+        uniform:
+        - 15.0
+        - 25.0
+    state:
+      x1: x1
+      x2: x2
+      x3: x3
+  - mode: '3'
+    draws:
+      x1:
+        uniform:
+        - 15.0
+        - 25.0
+      x2:
+        uniform:
+        - 5.0
+        - 20.0
+      x3:
+        uniform:
+        - 5.0
+        - 20.0
+    state:
+      x1: x1
+      x2: x2
+      x3: x3
+  - mode: '4'
+    draws:
+      x1:
+        uniform:
+        - 5.0
+        - 20.0
+      x2:
+        uniform:
+        - 15.0
+        - 25.0
+      x3:
+        uniform:
+        - 15.0
+        - 25.0
+    state:
+      x1: x1
+      x2: x2
+      x3: x3
+  - mode: '5'
+    draws:
+      x1:
+        uniform:
+        - 5.0
+        - 20.0
+      x2:
+        uniform:
+        - 15.0
+        - 25.0
+      x3:
+        uniform:
+        - 5.0
+        - 20.0
+    state:
+      x1: x1
+      x2: x2
+      x3: x3
+  - mode: '6'
+    draws:
+      x1:
+        uniform:
+        - 5.0
+        - 20.0
+      x2:
+        uniform:
+        - 5.0
+        - 20.0
+      x3:
+        uniform:
+        - 15.0
+        - 25.0
+    state:
+      x1: x1
+      x2: x2
+      x3: x3
+  - mode: '7'
+    draws:
+      x1:
+        uniform:
+        - 5.0
+        - 20.0
+      x2:
+        uniform:
+        - 5.0
+        - 20.0
+      x3:
+        uniform:
+        - 5.0
+        - 20.0
+    state:
+      x1: x1
+      x2: x2
+      x3: x3
+defaults:
+  duration: 20.0
+  sample_period: 0.01
+  max_step: 0.2
+state_scales:
+- 20
+- 20
+- 20
+measurement_scales:
+- 20
+- 20
+- 20
+process:
+  channels: *id001
+  scales:
+  - 1.0
+  - 1.0
+  - 1.0
+  interval: 0.2
+observation_events: {}
+acceptance: null

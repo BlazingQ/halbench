@@ -1,0 +1,27 @@
+schema: halbench-dataset-v1
+system_id: simple_heating_system
+name: Simple heating system
+source:
+  work: FaMoS
+  repo_url: https://doi.org/10.5281/zenodo.10657936
+  artifact_path: ExampleSystems/SimpleHeatingSystem
+  license: MIT
+  platform: matlab
+  data_provided: true
+data_format: state-only
+type: synthetic
+num_modes: 2
+dim:
+  input: 0
+  output: 1
+dynamics: affine
+dynamics_order: 1st
+guard: constant
+reset: 'no'
+variables:
+  states:
+  - x1
+  inputs: []
+time_unit: unknown
+model_description: sx
+notes: []

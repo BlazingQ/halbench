@@ -1,0 +1,69 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: buck_converter
+version: 1
+initial_origin: benchmark-extension
+states: &id001
+- il
+- vc
+outputs: *id001
+inputs: {}
+initial:
+  components:
+  - mode: '1'
+    draws:
+      il:
+        uniform:
+        - 0.0
+        - 21.867524857220026
+      vc:
+        uniform:
+        - 0.0
+        - 12.1
+    state:
+      il: il
+      vc: vc
+  - mode: '2'
+    draws:
+      il:
+        uniform:
+        - 0.0
+        - 21.867524857220026
+      vc:
+        uniform:
+        - 11.9
+        - 24.0
+    state:
+      il: il
+      vc: vc
+  - mode: '3'
+    draws:
+      il:
+        uniform:
+        - 0.0
+        - 0.0
+      vc:
+        uniform:
+        - 11.9
+        - 24.0
+    state:
+      il: il
+      vc: vc
+defaults:
+  duration: 0.02001
+  sample_period: 1.0e-05
+  max_step: 0.0002001
+state_scales:
+- 24
+- 24
+measurement_scales:
+- 24
+- 24
+process:
+  channels: *id001
+  scales:
+  - 1199.400299850075
+  - 1199.400299850075
+  interval: 0.0002001
+observation_events: {}
+acceptance: null

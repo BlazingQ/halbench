@@ -1,0 +1,31 @@
+schema: halbench-dataset-v1
+system_id: dc_motor
+name: DC Motor
+source:
+  work: Dainarx
+  repo_url: https://github.com/FICTION-ZJU/Dainarx
+  commit: 8a8f5dc
+  artifact_path: automata/linear/dc_motor_position_PID.json
+  license: unknown
+  platform: python
+  data_provided: false
+data_format: state-only
+type: synthetic
+num_modes: 2
+dim:
+  input: 0
+  output: 2
+dynamics: affine
+dynamics_order: 4th
+guard: linear
+reset: 'no'
+variables:
+  states:
+  - x1
+  - x2
+  inputs: []
+time_unit: unknown
+model_description: sx
+notes:
+- The fourth-order dynamics are expressed as first-order equations for positions and
+  their derivatives.

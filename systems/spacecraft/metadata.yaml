@@ -1,0 +1,33 @@
+schema: halbench-dataset-v1
+system_id: spacecraft
+name: Spacecraft
+source:
+  work: Dainarx
+  repo_url: https://github.com/FICTION-ZJU/Dainarx
+  commit: 8a8f5dc
+  artifact_path: automata/non_linear/spacecraft.json
+  license: unknown
+  platform: python
+  data_provided: false
+data_format: state-only
+type: synthetic
+num_modes: 2
+dim:
+  input: 0
+  output: 4
+dynamics: nonlinear
+dynamics_order: 1st
+guard: nonlinear
+reset: 'no'
+variables:
+  states:
+  - x1
+  - x2
+  - x3
+  - x4
+  inputs: []
+time_unit: unknown
+model_description: sx
+notes:
+- The four outputs follow explicit first-order differential equations.
+- Circular quadratic guards x1*x1+x2*x2 <= 710000 and >= 710000.

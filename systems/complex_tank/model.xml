@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+  <component id="plant">
+    <param name="x1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="x2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="x3" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <location id="0" name="q0">
+      <invariant>true</invariant>
+      <flow>x1' == -0.08 * x1 &amp; x2' == -0.07 * x2 &amp; x3' == -0.05 * x3</flow>
+    </location>
+    <location id="1" name="q1">
+      <invariant>true</invariant>
+      <flow>x1' == -0.08 * x1 &amp; x2' == -0.07 * x2 &amp; x3' == 9 + -0.05 * x3</flow>
+    </location>
+    <location id="2" name="q2">
+      <invariant>true</invariant>
+      <flow>x1' == -0.08 * x1 &amp; x2' == 10 + -0.07 * x2 &amp; x3' == -0.05 * x3</flow>
+    </location>
+    <location id="3" name="q3">
+      <invariant>true</invariant>
+      <flow>x1' == -0.08 * x1 &amp; x2' == 10 + -0.07 * x2 &amp; x3' == 9 + -0.05 * x3</flow>
+    </location>
+    <location id="4" name="q4">
+      <invariant>true</invariant>
+      <flow>x1' == 11 + -0.08 * x1 &amp; x2' == -0.07 * x2 &amp; x3' == -0.05 * x3</flow>
+    </location>
+    <location id="5" name="q5">
+      <invariant>true</invariant>
+      <flow>x1' == 11 + -0.08 * x1 &amp; x2' == -0.07 * x2 &amp; x3' == 9 + -0.05 * x3</flow>
+    </location>
+    <location id="6" name="q6">
+      <invariant>true</invariant>
+      <flow>x1' == 11 + -0.08 * x1 &amp; x2' == 10 + -0.07 * x2 &amp; x3' == -0.05 * x3</flow>
+    </location>
+    <location id="7" name="q7">
+      <invariant>true</invariant>
+      <flow>x1' == 11 + -0.08 * x1 &amp; x2' == 10 + -0.07 * x2 &amp; x3' == 9 + -0.05 * x3</flow>
+    </location>
+    <transition source="0" target="1" asap="true">
+      <guard>x3 &lt;= 15</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="0" target="2" asap="true">
+      <guard>x3 &gt; 15 &amp; x2 &lt;= 15</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="0" target="4" asap="true">
+      <guard>x3 &gt; 15 &amp; x2 &gt; 15 &amp; x1 &lt;= 15</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="1" target="0" asap="true">
+      <guard>x3 &gt;= 20</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="1" target="3" asap="true">
+      <guard>x3 &lt; 20 &amp; x2 &lt;= 10</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="1" target="5" asap="true">
+      <guard>x3 &lt; 20 &amp; x2 &gt; 10 &amp; x1 &lt;= 10</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="2" target="3" asap="true">
+      <guard>x3 &lt;= 10</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="2" target="0" asap="true">
+      <guard>x3 &gt; 10 &amp; x2 &gt;= 20</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="2" target="6" asap="true">
+      <guard>x3 &gt; 10 &amp; x2 &lt; 20 &amp; x1 &lt;= 10</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="3" target="2" asap="true">
+      <guard>x3 &gt;= 20</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="3" target="1" asap="true">
+      <guard>x3 &lt; 20 &amp; x2 &gt;= 20</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="3" target="7" asap="true">
+      <guard>x3 &lt; 20 &amp; x2 &lt; 20 &amp; x1 &lt;= 5</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="4" target="5" asap="true">
+      <guard>x3 &lt;= 10</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="4" target="6" asap="true">
+      <guard>x3 &gt; 10 &amp; x2 &lt;= 10</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="4" target="0" asap="true">
+      <guard>x3 &gt; 10 &amp; x2 &gt; 10 &amp; x1 &gt;= 20</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="5" target="4" asap="true">
+      <guard>x3 &gt;= 20</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="5" target="7" asap="true">
+      <guard>x3 &lt; 20 &amp; x2 &lt;= 5</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="5" target="1" asap="true">
+      <guard>x3 &lt; 20 &amp; x2 &gt; 5 &amp; x1 &gt;= 20</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="6" target="7" asap="true">
+      <guard>x3 &lt;= 5</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="6" target="4" asap="true">
+      <guard>x3 &gt; 5 &amp; x2 &gt;= 20</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="6" target="2" asap="true">
+      <guard>x3 &gt; 5 &amp; x2 &lt; 20 &amp; x1 &gt;= 20</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="7" target="6" asap="true">
+      <guard>x3 &gt;= 20</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="7" target="5" asap="true">
+      <guard>x3 &lt; 20 &amp; x2 &gt;= 20</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+    <transition source="7" target="3" asap="true">
+      <guard>x3 &lt; 20 &amp; x2 &lt; 20 &amp; x1 &gt;= 20</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3</assignment>
+    </transition>
+  </component>
+</sspaceex>

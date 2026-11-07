@@ -1,0 +1,33 @@
+name: Python and dataset checks
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.11', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+      - name: Install
+        run: python -m pip install -e '.[generate]'
+      - name: Check dependencies
+        run: python -m pip check
+      - name: Check execution semantics, batches and packaged data
+        run: python -m unittest discover -s tests -v
+      - name: Check catalog generation
+        run: |
+          python scripts/generate_catalog.py
+          git diff --exit-code -- README.md catalog.csv

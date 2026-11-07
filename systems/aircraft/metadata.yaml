@@ -1,0 +1,36 @@
+schema: halbench-dataset-v1
+system_id: aircraft
+name: Aircraft
+source:
+  work: HSCC25
+  repo_url: https://codeocean.com/capsule/1724008/tree/v1
+  commit: unavailable
+  artifact_path: data/general/{withoutNoise,processNoise,measurementNoise,bothNoise}/Aircraft.mat
+  license: CC0-1.0
+  platform: matlab
+  data_provided: true
+data_format: input-output
+type: synthetic
+num_modes: 1
+dim:
+  input: 2
+  output: 3
+dynamics: nonlinear
+dynamics_order: 1st
+guard: none
+reset: 'no'
+variables:
+  states:
+  - x1
+  - x2
+  - x3
+  inputs:
+  - u1
+  - u2
+time_unit: s
+model_description: sx
+notes:
+- The dynamics include division by x1.
+- The Aircraft benchmark accepts trajectories satisfying -3 <= x2 <= 0.8 and x3 >
+  0 at solver nodes. Rejected candidates are resampled, with a limit of 1000 candidates
+  per trajectory.

@@ -1,0 +1,70 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: underdamped_system
+version: 1
+initial_origin: benchmark-extension
+states:
+- x1
+- x2
+- x2_d1
+outputs:
+- x1
+- x2
+inputs: {}
+initial:
+  components:
+  - mode: '1'
+    draws:
+      x1:
+        uniform:
+        - 0.0
+        - 5.0
+      x2:
+        uniform:
+        - 0.0
+        - 1.0
+      x2_d1:
+        uniform:
+        - -5.0
+        - 5.0
+    state:
+      x1: x1
+      x2: x2
+      x2_d1: x2_d1
+  - mode: '2'
+    draws:
+      x1:
+        uniform:
+        - 0.0
+        - 5.0
+      x2:
+        uniform:
+        - 0.0
+        - 1.0
+      x2_d1:
+        uniform:
+        - -5.0
+        - 5.0
+    state:
+      x1: x1
+      x2: x2
+      x2_d1: x2_d1
+defaults:
+  duration: 20.0
+  sample_period: 0.01
+  max_step: 0.2
+state_scales:
+- 5
+- 1
+- 5
+measurement_scales:
+- 5
+- 1
+process:
+  channels:
+  - x2_d1
+  scales:
+  - 0.25
+  interval: 0.2
+observation_events: {}
+acceptance: null

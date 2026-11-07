@@ -1,0 +1,43 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: bouncing_ball
+version: 1
+initial_origin: source-region
+states: &id001
+- x1
+- x2
+outputs: *id001
+inputs: {}
+initial:
+  components:
+  - mode: '1'
+    draws:
+      x1:
+        uniform:
+        - 0.1
+        - 1.0
+      x2:
+        uniform:
+        - -1.0
+        - 1.0
+    state:
+      x1: x1
+      x2: x2
+defaults:
+  duration: 2.0
+  sample_period: 0.001
+  max_step: 0.02
+state_scales:
+- 1
+- 1
+measurement_scales:
+- 1
+- 1
+process:
+  channels:
+  - x2
+  scales:
+  - 0.5
+  interval: 0.02
+observation_events: {}
+acceptance: null

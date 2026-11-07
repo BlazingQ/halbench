@@ -1,0 +1,32 @@
+schema: halbench-dataset-v1
+system_id: jumper_dog
+name: Jumper Dog
+source:
+  work: Dainarx
+  repo_url: https://github.com/FICTION-ZJU/Dainarx
+  commit: 8a8f5dc
+  artifact_path: automata/linear/one_legged_jumper.json
+  license: unknown
+  platform: python
+  data_provided: false
+data_format: state-only
+type: synthetic
+num_modes: 2
+dim:
+  input: 0
+  output: 4
+dynamics: affine
+dynamics_order: 1st
+guard: linear
+reset: 'no'
+variables:
+  states:
+  - x1
+  - x2
+  - x3
+  - x4
+  inputs: []
+time_unit: unknown
+model_description: sx
+notes:
+- The switching guards use the closed thresholds x2 >= 0.5 and x2 <= 0.45.

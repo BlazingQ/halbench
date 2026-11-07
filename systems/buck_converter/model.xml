@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+  <component id="plant">
+    <param name="il" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="vc" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <location id="1" name="q1">
+      <invariant>true</invariant>
+      <flow>il' == -271.6981 * il + -377.3585 * vc + 377.3585 * 24 &amp; vc' == 454.5455 * il + -45.4545 * vc + 0 * 24</flow>
+    </location>
+    <location id="2" name="q2">
+      <invariant>true</invariant>
+      <flow>il' == -196.2264 * il + -377.3585 * vc + 0 * 24 &amp; vc' == 454.5455 * il + -45.4545 * vc + 0 * 24</flow>
+    </location>
+    <location id="3" name="q3">
+      <invariant>true</invariant>
+      <flow>il' == 0.0 &amp; vc' == -45.4545 * vc + 0 * 24</flow>
+    </location>
+    <transition source="1" target="2" asap="true">
+      <guard>vc &gt;= 12.1</guard>
+      <assignment>il' == il &amp; vc' == vc</assignment>
+    </transition>
+    <transition source="2" target="3" asap="true">
+      <guard>il &lt;= 0</guard>
+      <assignment>il' == il &amp; vc' == vc</assignment>
+    </transition>
+    <transition source="2" target="1" asap="true">
+      <guard>il &gt; 0 &amp; vc &lt;= 11.9</guard>
+      <assignment>il' == il &amp; vc' == vc</assignment>
+    </transition>
+    <transition source="3" target="1" asap="true">
+      <guard>vc &lt;= 11.9</guard>
+      <assignment>il' == il &amp; vc' == vc</assignment>
+    </transition>
+  </component>
+</sspaceex>

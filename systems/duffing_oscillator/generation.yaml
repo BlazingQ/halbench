@@ -1,0 +1,74 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: duffing_oscillator
+version: 1
+initial_origin: benchmark-extension
+states:
+- x
+- x_d1
+outputs:
+- x
+inputs:
+  u:
+    kind: sine
+    offset:
+    - 0
+    - 0
+    amplitude:
+    - 0.1
+    - 0.5
+    frequency:
+    - 0.5
+    - 2
+    phase:
+    - 0
+    - 6.283185307179586
+initial:
+  components:
+  - mode: '1'
+    draws:
+      sign:
+        choice:
+        - -1
+        - 1
+      r:
+        uniform:
+        - 0.8
+        - 2.4
+      v:
+        uniform:
+        - -1.697056274847714
+        - 1.697056274847714
+    state:
+      x: sign*r
+      x_d1: v
+  - mode: '2'
+    draws:
+      x:
+        uniform:
+        - -1.2
+        - 1.2
+      x_d1:
+        uniform:
+        - -1.697056274847714
+        - 1.697056274847714
+    state:
+      x: x
+      x_d1: x_d1
+defaults:
+  duration: 10.0
+  sample_period: 0.001
+  max_step: 0.1
+state_scales:
+- 2.4
+- 1.7
+measurement_scales:
+- 2.4
+process:
+  channels:
+  - x_d1
+  scales:
+  - 0.16999999999999998
+  interval: 0.1
+observation_events: {}
+acceptance: null

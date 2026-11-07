@@ -1,0 +1,81 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: aircraft
+version: 1
+initial_origin: source-region
+states: &id001
+- x1
+- x2
+- x3
+outputs: *id001
+inputs:
+  u1:
+    kind: zoh
+    bounds:
+    - -5000
+    - 5000
+    increment:
+    - -500
+    - 500
+    interval: 0.5
+  u2:
+    kind: zoh
+    bounds:
+    - -0.25
+    - 0.25
+    increment:
+    - -0.05
+    - 0.05
+    interval: 0.5
+initial:
+  components:
+  - mode: '1'
+    draws:
+      x1:
+        uniform:
+        - 50.0
+        - 100.0
+      x2:
+        uniform:
+        - -3.0
+        - 0.0
+      x3:
+        uniform:
+        - 100.0
+        - 100.0
+    state:
+      x1: x1
+      x2: x2
+      x3: x3
+defaults:
+  duration: 10.0
+  sample_period: 0.02
+  max_step: 0.1
+state_scales:
+- 100
+- 1
+- 100
+measurement_scales:
+- 100
+- 1
+- 100
+process:
+  channels: *id001
+  scales:
+  - 10.0
+  - 0.1
+  - 10.0
+  interval: 0.1
+observation_events: {}
+acceptance:
+  kind: node_bounds
+  bounds:
+    x2:
+    - -3
+    - 0.8
+    x3:
+    - 0
+    - null
+  strict_lower:
+  - x3
+  max_attempts: 1000

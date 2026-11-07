@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+  <component id="plant">
+    <param name="x" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="x_d1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="u" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" />
+    <location id="1" name="q1">
+      <invariant>true</invariant>
+      <flow>x' == x_d1 &amp; x_d1' == u - 0.5 * x_d1 + x - 1.5 * x ^ 3</flow>
+    </location>
+    <location id="2" name="q2">
+      <invariant>true</invariant>
+      <flow>x' == x_d1 &amp; x_d1' == u - 0.2 * x_d1 + x - 0.5 * x ^ 3</flow>
+    </location>
+    <transition source="1" target="2" asap="true">
+      <guard>x ^ 2 &lt;= 0.8 ^ 2</guard>
+      <assignment>x' == x &amp; x_d1' == x_d1 * 0.95</assignment>
+    </transition>
+    <transition source="2" target="1" asap="true">
+      <guard>x ^ 2 &gt;= 1.2 ^ 2</guard>
+      <assignment>x' == x &amp; x_d1' == x_d1 * 0.95</assignment>
+    </transition>
+  </component>
+</sspaceex>

@@ -1,0 +1,26 @@
+system_id,Name,System type,System origin,#Modes,Dim (I+O),Dynamics (Order),Guard,Reset,Source,Traces (train/test)
+aircraft,Aircraft,Open,synthetic,1,2 + 3,nonlinear (1st),none,no,HSCC25,256/64
+biological_system,Biological System,Closed,synthetic,2,0 + 9,polynomial (1st),linear,no,Dainarx,256/64
+bouncing_ball,Bouncing Ball,Closed,synthetic,1,0 + 2,affine (1st),linear,yes,HSCC25,256/64
+buck_converter,Buck Converter,Closed,synthetic,3,0 + 2,affine (1st),linear,no,FaMoS,256/64
+complex_tank,Complex Tank,Closed,synthetic,8,0 + 3,affine (1st),linear,no,FaMoS,256/64
+controlled_underdamped_system,Controlled Underdamped,Open,synthetic,4,1 + 2,affine (2nd),linear,yes,Dainarx,256/64
+cooperative_vehicles,Cooperative Vehicles,Open,synthetic,2,1 + 9,linear (1st),fixed-time,no,hautlearn,256/64
+dc_motor,DC Motor,Closed,synthetic,2,0 + 2,affine (4th),linear,no,Dainarx,256/64
+duffing_oscillator,Duffing Oscillator,Open,synthetic,2,1 + 1,polynomial (2nd),nonlinear,yes,Dainarx,256/64
+ecg_signals,ECG Signals,Closed,real-world,-1,0 + 1,nonlinear (unknown),implicit,no,HySynth,3/0
+engine_timing,Engine Timing Model,Open,real-world,-1,2 + 1,nonlinear (unknown),implicit,no,HybridLearner,64/40
+excitable_cell,Excitable cell,Closed,synthetic,4,0 + 1,constant (1st),constant,no,HybridLearner,256/64
+f1tenth_car,F1tenth Car,Open,real-world,-1,2 + 4,nonlinear (unknown),implicit,no,HSCC25,36/5
+heating_system_with_input,Heating with Input,Open,synthetic,2,1 + 1,affine (1st),linear,no,FaMoS,256/64
+jumper_dog,Jumper Dog,Closed,synthetic,2,0 + 4,affine (1st),linear,no,Dainarx,256/64
+lotka_volterra,LotkaVolterra,Closed,synthetic,2,0 + 2,polynomial (1st),nonlinear,no,Dainarx,256/64
+multi_room_heating,Multi-room Heating,Open,synthetic,6,1 + 3,affine (1st),linear,no,hautlearn,256/64
+oscillator,Oscillator 2,Closed,synthetic,4,0 + 2,affine (1st),linear,no,HybridLearner,256/64
+oscillator__dainarx,Oscillator,Closed,synthetic,2,0 + 2,nonlinear (1st),nonlinear,no,Dainarx,256/64
+simple_heating_system,Simple heating system,Closed,synthetic,2,0 + 1,affine (1st),constant,no,FaMoS,256/64
+simple_non_polynomial,Simple Non-Polynomial,Closed,synthetic,2,0 + 1,nonlinear (1st),linear,yes,Dainarx,256/64
+spacecraft,Spacecraft,Closed,synthetic,2,0 + 4,nonlinear (1st),nonlinear,no,Dainarx,256/64
+switched_lorenz_attractor,Switched Lorenz,Closed,synthetic,2,0 + 3,polynomial (1st),linear,no,InferDynamic,256/64
+two_tank,Two-tank System,Open,synthetic,4,1 + 2,affine (1st),constant,no,HybridLearner,256/64
+underdamped_system,Underdamped System,Closed,synthetic,2,0 + 2,affine (2nd),linear,no,Dainarx,256/64

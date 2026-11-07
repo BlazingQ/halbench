@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+  <component id="plant">
+    <param name="x1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="x2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="x3" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="x4" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <location id="1" name="q1">
+      <invariant>true</invariant>
+      <flow>x1' == x3 &amp; x2' == x4 &amp; x3' == 0.000201*x2 - 0.057638256806855922248709263104*x1 - 2.8999508*x3 + 0.008759786984672*x4 - (1434960000000000000.0*(x1 + 42164000))/((x1 + 42164000)^2 - x2^2)^(3/2) + 807.15359572684597539321366928407 &amp; x4' == - 0.000174*x1 - 0.066493256806855922248709263104*x2 - 0.008741346984672*x3 - 2.9030026*x4 - (1434960000000000000.0*x2)/((x1 + 42164000)^2 - x2^2)^(3/2)</flow>
+    </location>
+    <location id="2" name="q2">
+      <invariant>true</invariant>
+      <flow>x1' == x3 &amp; x2' == x4 &amp; x3' == 0.0002624*x2 - 0.576038456806855922248709263104*x1 - 19.2299796*x3 + 0.008750586984672*x4 - (1434960000000000000.0*(x1 + 42164000))/((x1 + 42164000)^2 - x2^2)^(3/2) + 807.15359572684597539321366928407 &amp; x4' == - 0.0002624*x1 - 0.575980856806855922248709263104*x2 - 0.008741346984672*x3 - 19.2299766*x4 - (1434960000000000000.0*x2)/((x1 + 42164000)^2 - x2^2)^(3/2)</flow>
+    </location>
+    <transition source="1" target="2" asap="true">
+      <guard>x1 * x1 + x2 * x2 &lt;= 710000</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3 &amp; x4' == x4</assignment>
+    </transition>
+    <transition source="2" target="1" asap="true">
+      <guard>x1 * x1 + x2 * x2 &gt;= 710000</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x3' == x3 &amp; x4' == x4</assignment>
+    </transition>
+  </component>
+</sspaceex>

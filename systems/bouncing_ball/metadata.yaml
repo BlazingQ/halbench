@@ -1,0 +1,30 @@
+schema: halbench-dataset-v1
+system_id: bouncing_ball
+name: Bouncing Ball
+source:
+  work: HSCC25
+  repo_url: https://codeocean.com/capsule/1724008/tree/v1
+  commit: unavailable
+  artifact_path: data/general/{withoutNoise,measurementNoise,processNoise,bothNoise}/BouncingBall.mat
+  license: CC0-1.0
+  platform: matlab
+  data_provided: true
+data_format: state-only
+type: synthetic
+num_modes: 1
+dim:
+  input: 0
+  output: 2
+dynamics: affine
+dynamics_order: 1st
+guard: linear
+reset: 'yes'
+variables:
+  states:
+  - x1
+  - x2
+  inputs: []
+time_unit: s
+model_description: sx
+notes:
+- The restitution coefficient is 0.9.

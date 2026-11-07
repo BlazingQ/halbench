@@ -1,0 +1,29 @@
+schema: halbench-dataset-v1
+system_id: underdamped_system
+name: Underdamped System
+source:
+  work: Dainarx
+  repo_url: https://github.com/FICTION-ZJU/Dainarx
+  commit: 8a8f5dc
+  artifact_path: automata/linear/underdamped_system.json
+  license: unknown
+  platform: python
+  data_provided: false
+data_format: state-only
+type: synthetic
+num_modes: 2
+dim:
+  input: 0
+  output: 2
+dynamics: affine
+dynamics_order: 2nd
+guard: linear
+reset: 'no'
+variables:
+  states:
+  - x1
+  - x2
+  inputs: []
+time_unit: unknown
+model_description: sx
+notes: []

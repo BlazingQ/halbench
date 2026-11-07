@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+  <component id="plant">
+    <param name="x1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="x2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="x3" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="u1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" />
+    <param name="u2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="false" />
+    <location id="1" name="q1">
+      <invariant>true</invariant>
+      <flow>x1' == 1/60000*(u1*cos(u2) - ((2.7 + 3.08*(1.15 + 4.2*u2)^2)*x1^2) - 60000*9.81*sin(x2)) &amp; x2' == 1/(60000*x1)*(u1*sin(u2) + ((68.6*(1.25 + 4.2*u2))*x1^2) - 60000*9.81*cos(x2)) &amp; x3' == x1*sin(x2)</flow>
+    </location>
+  </component>
+</sspaceex>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sspaceex xmlns="http://www-verimag.imag.fr/xml-namespaces/sspaceex" version="0.2" math="SpaceEx">
+  <component id="plant">
+    <param name="x1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="x2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="x2_d1" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="x2_d2" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <param name="x2_d3" type="real" local="false" d1="1" d2="1" dynamics="any" controlled="true" />
+    <location id="1" name="q1">
+      <invariant>true</invariant>
+      <flow>x1' == 1 &amp; x2' == x2_d1 &amp; x2_d1' == x2_d2 &amp; x2_d2' == x2_d3 &amp; x2_d3' == (1 / 0.01) * (-(0.5 * 0.1 + 0.02) * x2_d3 - (0.1 + 0.8 * 0.8) * x2_d2 - 0.8 * x2_d1 - 0.8 * x2 + 1)</flow>
+    </location>
+    <location id="2" name="q2">
+      <invariant>true</invariant>
+      <flow>x1' == -1 &amp; x2' == x2_d1 &amp; x2_d1' == x2_d2 &amp; x2_d2' == x2_d3 &amp; x2_d3' == (1 / 0.01) * (-(0.5 * 0.1 + 0.02) * x2_d3 - (0.1 + 0.8 * 0.8) * x2_d2 - 0.8 * x2_d1 - 0.8 * x2)</flow>
+    </location>
+    <transition source="1" target="2" asap="true">
+      <guard>x1 &gt;= 5</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x2_d1' == x2_d1 &amp; x2_d2' == x2_d2 &amp; x2_d3' == x2_d3</assignment>
+    </transition>
+    <transition source="2" target="1" asap="true">
+      <guard>x1 &lt;= 0</guard>
+      <assignment>x1' == x1 &amp; x2' == x2 &amp; x2_d1' == x2_d1 &amp; x2_d2' == x2_d2 &amp; x2_d3' == x2_d3</assignment>
+    </transition>
+  </component>
+</sspaceex>

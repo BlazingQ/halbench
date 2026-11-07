@@ -1,0 +1,31 @@
+schema: halbench-dataset-v1
+system_id: controlled_underdamped_system
+name: Controlled Underdamped
+source:
+  work: Dainarx
+  repo_url: https://github.com/FICTION-ZJU/Dainarx
+  commit: 8a8f5dc
+  artifact_path: automata/linear/complex_underdamped_system.json
+  license: unknown
+  platform: python
+  data_provided: false
+data_format: input-output
+type: synthetic
+num_modes: 4
+dim:
+  input: 1
+  output: 2
+dynamics: affine
+dynamics_order: 2nd
+guard: linear
+reset: 'yes'
+variables:
+  states:
+  - x1
+  - x2
+  inputs:
+  - u1
+time_unit: unknown
+model_description: sx
+notes:
+- Resets can change derivatives while keeping the observed positions continuous.

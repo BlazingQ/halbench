@@ -1,0 +1,89 @@
+{
+  "schema": "halbench-observed-v3",
+  "status": "complete",
+  "system_id": "ecg_signals",
+  "columns": [
+    "t",
+    "x1"
+  ],
+  "source": {
+    "work": "HySynth",
+    "repo_url": "https://github.com/HySynth/HySynth",
+    "commit": "6bcb20c",
+    "artifact_path": "data/real_data/datasets/ekg_data",
+    "license": "MIT",
+    "platform": "python",
+    "data_provided": true
+  },
+  "traces": [
+    {
+      "split": "train",
+      "path": "train/ekg_1.csv.gz",
+      "samples": 950,
+      "sha256": "2075487534669e4727ed372a93bf860054f8e54e6bc48b6638a1e90e6b569d14",
+      "t_start": 0.0,
+      "t_end": 9.489999999999842,
+      "source_path": "data/real_data/datasets/ekg_data/ekg_1.csv",
+      "source_sha256": "c1419936a9193fc8e64a619c7c7a45e9aeb09e6b212b44e933fd2bdc9c1ebb5d"
+    },
+    {
+      "split": "train",
+      "path": "train/ekg_2.csv.gz",
+      "samples": 950,
+      "sha256": "95960ffdbf24ae5ea767819c263a363a1f22395fcfacb16ab90659ca627a67e3",
+      "t_start": 0.0,
+      "t_end": 9.489999999999842,
+      "source_path": "data/real_data/datasets/ekg_data/ekg_2.csv",
+      "source_sha256": "f0aba26fcb7b7a21cbf3177db4274a5a07b21771767b59d9e4b8f5008c54d1b1"
+    },
+    {
+      "split": "train",
+      "path": "train/ekg_3.csv.gz",
+      "samples": 950,
+      "sha256": "aef219727782f296a2201b195261aa8d39e82c3dffc270b30c24732b928a7aab",
+      "t_start": 0.0,
+      "t_end": 9.489999999999842,
+      "source_path": "data/real_data/datasets/ekg_data/ekg_3.csv",
+      "source_sha256": "d56f0423fa46b4224b7ab673e534c032b45c75ff69221a6e9126cd54ec627c36"
+    }
+  ],
+  "export": {
+    "csv_bytes_preserved": true,
+    "description": "System definitions are stored in systems; this manifest records the dataset files and their generation or source information."
+  },
+  "data_origin": "source-observations",
+  "data_license": "MIT",
+  "time_unit": "unknown",
+  "sampling_period": 0.01,
+  "counts": {
+    "train": 3,
+    "test": 0
+  },
+  "samples_per_trace": 950,
+  "variables": {
+    "states": [
+      "x1"
+    ],
+    "inputs": []
+  },
+  "system_hashes": {
+    "metadata.yaml": "04504529632664b94dd6fbd3e3b7c5da36bbe896155a88c4760131d0649fc08c"
+  },
+  "license_file": "LICENSE",
+  "license_provenance": {
+    "basis": "upstream-repository-declaration",
+    "repo_url": "https://github.com/HySynth/HySynth",
+    "commit": "6bcb20cf794f4624ad26ca185a64643a03d54a1b",
+    "path": "LICENSE",
+    "url": "https://github.com/HySynth/HySynth/blob/6bcb20cf794f4624ad26ca185a64643a03d54a1b/LICENSE",
+    "sha256": "36ce893b7c2234b7175adc011974585c6fd6da4a47a9a9de450b0336060a9e2f"
+  },
+  "conversion": {
+    "modified_by": "HALBench contributors",
+    "notice_date": "2026-11-07",
+    "changes": [
+      "Remove the row-index column and rename Time,Value to t,x1.",
+      "Preserve all sample values and timestamps; store each CSV with gzip compression."
+    ]
+  }
+}

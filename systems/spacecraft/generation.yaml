@@ -1,0 +1,88 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: spacecraft
+version: 1
+initial_origin: benchmark-extension
+states:
+- x1
+- x2
+- x3
+- x4
+outputs:
+- x1
+- x2
+- x3
+- x4
+inputs: {}
+initial:
+  components:
+  - mode: '1'
+    draws:
+      theta:
+        uniform:
+        - 0.0
+        - 6.283185307179586
+      r2:
+        uniform:
+        - 710000.0
+        - 1597500.0000000002
+      vx:
+        uniform:
+        - -16.747476699238128
+        - 16.747476699238128
+      vy:
+        uniform:
+        - -16.747476699238128
+        - 16.747476699238128
+    state:
+      x1: sqrt(r2)*cos(theta)
+      x2: sqrt(r2)*sin(theta)
+      x3: vx
+      x4: vy
+  - mode: '2'
+    draws:
+      theta:
+        uniform:
+        - 0.0
+        - 6.283185307179586
+      r2:
+        uniform:
+        - 177500.0
+        - 710000.0
+      vx:
+        uniform:
+        - -16.747476699238128
+        - 16.747476699238128
+      vy:
+        uniform:
+        - -16.747476699238128
+        - 16.747476699238128
+    state:
+      x1: sqrt(r2)*cos(theta)
+      x2: sqrt(r2)*sin(theta)
+      x3: vx
+      x4: vy
+defaults:
+  duration: 10.0
+  sample_period: 0.01
+  max_step: 0.1
+state_scales:
+- 842.6149773176359
+- 842.6149773176359
+- 16.747476699238128
+- 16.747476699238128
+measurement_scales:
+- 842.6149773176359
+- 842.6149773176359
+- 16.747476699238128
+- 16.747476699238128
+process:
+  channels:
+  - x3
+  - x4
+  scales:
+  - 1.6747476699238129
+  - 1.6747476699238129
+  interval: 0.1
+observation_events: {}
+acceptance: null

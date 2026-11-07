@@ -1,0 +1,2917 @@
+{
+  "schema": "halbench-generated-v3",
+  "status": "complete",
+  "system_id": "complex_tank",
+  "request": {
+    "n_train": 256,
+    "n_test": 64,
+    "duration": 20.0,
+    "sample_period": 0.01,
+    "seed": 20261106,
+    "process_noise": 0.0,
+    "measurement_noise": 0.0
+  },
+  "columns": [
+    "t",
+    "x1",
+    "x2",
+    "x3"
+  ],
+  "recipe": {
+    "schema": "halbench-generation-v1",
+    "system_id": "complex_tank",
+    "version": 1,
+    "initial_origin": "benchmark-extension",
+    "states": [
+      "x1",
+      "x2",
+      "x3"
+    ],
+    "outputs": [
+      "x1",
+      "x2",
+      "x3"
+    ],
+    "inputs": {},
+    "initial": {
+      "components": [
+        {
+          "mode": "0",
+          "draws": {
+            "x1": {
+              "uniform": [
+                15.0,
+                25.0
+              ]
+            },
+            "x2": {
+              "uniform": [
+                15.0,
+                25.0
+              ]
+            },
+            "x3": {
+              "uniform": [
+                15.0,
+                25.0
+              ]
+            }
+          },
+          "state": {
+            "x1": "x1",
+            "x2": "x2",
+            "x3": "x3"
+          }
+        },
+        {
+          "mode": "1",
+          "draws": {
+            "x1": {
+              "uniform": [
+                15.0,
+                25.0
+              ]
+            },
+            "x2": {
+              "uniform": [
+                15.0,
+                25.0
+              ]
+            },
+            "x3": {
+              "uniform": [
+                5.0,
+                20.0
+              ]
+            }
+          },
+          "state": {
+            "x1": "x1",
+            "x2": "x2",
+            "x3": "x3"
+          }
+        },
+        {
+          "mode": "2",
+          "draws": {
+            "x1": {
+              "uniform": [
+                15.0,
+                25.0
+              ]
+            },
+            "x2": {
+              "uniform": [
+                5.0,
+                20.0
+              ]
+            },
+            "x3": {
+              "uniform": [
+                15.0,
+                25.0
+              ]
+            }
+          },
+          "state": {
+            "x1": "x1",
+            "x2": "x2",
+            "x3": "x3"
+          }
+        },
+        {
+          "mode": "3",
+          "draws": {
+            "x1": {
+              "uniform": [
+                15.0,
+                25.0
+              ]
+            },
+            "x2": {
+              "uniform": [
+                5.0,
+                20.0
+              ]
+            },
+            "x3": {
+              "uniform": [
+                5.0,
+                20.0
+              ]
+            }
+          },
+          "state": {
+            "x1": "x1",
+            "x2": "x2",
+            "x3": "x3"
+          }
+        },
+        {
+          "mode": "4",
+          "draws": {
+            "x1": {
+              "uniform": [
+                5.0,
+                20.0
+              ]
+            },
+            "x2": {
+              "uniform": [
+                15.0,
+                25.0
+              ]
+            },
+            "x3": {
+              "uniform": [
+                15.0,
+                25.0
+              ]
+            }
+          },
+          "state": {
+            "x1": "x1",
+            "x2": "x2",
+            "x3": "x3"
+          }
+        },
+        {
+          "mode": "5",
+          "draws": {
+            "x1": {
+              "uniform": [
+                5.0,
+                20.0
+              ]
+            },
+            "x2": {
+              "uniform": [
+                15.0,
+                25.0
+              ]
+            },
+            "x3": {
+              "uniform": [
+                5.0,
+                20.0
+              ]
+            }
+          },
+          "state": {
+            "x1": "x1",
+            "x2": "x2",
+            "x3": "x3"
+          }
+        },
+        {
+          "mode": "6",
+          "draws": {
+            "x1": {
+              "uniform": [
+                5.0,
+                20.0
+              ]
+            },
+            "x2": {
+              "uniform": [
+                5.0,
+                20.0
+              ]
+            },
+            "x3": {
+              "uniform": [
+                15.0,
+                25.0
+              ]
+            }
+          },
+          "state": {
+            "x1": "x1",
+            "x2": "x2",
+            "x3": "x3"
+          }
+        },
+        {
+          "mode": "7",
+          "draws": {
+            "x1": {
+              "uniform": [
+                5.0,
+                20.0
+              ]
+            },
+            "x2": {
+              "uniform": [
+                5.0,
+                20.0
+              ]
+            },
+            "x3": {
+              "uniform": [
+                5.0,
+                20.0
+              ]
+            }
+          },
+          "state": {
+            "x1": "x1",
+            "x2": "x2",
+            "x3": "x3"
+          }
+        }
+      ]
+    },
+    "defaults": {
+      "duration": 20.0,
+      "sample_period": 0.01,
+      "max_step": 0.2
+    },
+    "state_scales": [
+      20,
+      20,
+      20
+    ],
+    "measurement_scales": [
+      20,
+      20,
+      20
+    ],
+    "process": {
+      "channels": [
+        "x1",
+        "x2",
+        "x3"
+      ],
+      "scales": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "interval": 0.2
+    },
+    "observation_events": {},
+    "acceptance": null
+  },
+  "generator_hashes": {
+    "__init__.py": "0f0eb2d66004e4519f170327190b58a07c97271581593fbb70cc82512a9d9ead",
+    "__main__.py": "b2a985dc8e307815c37f445a402afa5395bb5f6e84113197f983c2f70fa09930",
+    "dataset.py": "54af7746eb45456ef0922a14073a7692098fc43c83957a355528b5e4a4332416",
+    "engine.py": "257ca8791dc8ae85062bd0a4bd298e12dd6f2c66366bf4bf66f29b5052561bf8",
+    "recipes.py": "bd46a11d8dd20298e471dd1774608f028e808953ab4120b5fe373432e305add5",
+    "signals.py": "f66f5a4fac23b4ce5d620c1bb794d96f0788c6d421a3b1a12de9d99c77cb7967",
+    "sx.py": "cb5f238b67c22a6c3c16fd8cef975210814e3a67227cc0eebb72c99748d67a1f"
+  },
+  "execution": {
+    "method": "DOP853",
+    "rtol": 1e-11,
+    "atol_factor": 1e-13,
+    "transition_detection": "atomic-root-localization",
+    "boundary_rule": "transverse-identity-rearming-v1",
+    "sampling_side": "right",
+    "workers": 32
+  },
+  "environment": {
+    "python": "3.13.2",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "pyyaml": "6.0.3"
+  },
+  "accepted": 320,
+  "rejected": 0,
+  "traces": [
+    {
+      "trace_id": 0,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000000.csv.gz",
+      "sha256": "9194b28dee5e89997ce6bfc397a70a09e8e50268c6d482ce31b2d48a2df0c97a"
+    },
+    {
+      "trace_id": 1,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000001.csv.gz",
+      "sha256": "c3182cbf8a1e733fe874bd42bdf6199995934e9777f82a67e002a641478079b1"
+    },
+    {
+      "trace_id": 2,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000002.csv.gz",
+      "sha256": "2bdd074d1faf30a481c8090eb2cca831a44f9a4cb14d908b1161e0647a71b171"
+    },
+    {
+      "trace_id": 3,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000003.csv.gz",
+      "sha256": "3a9ae7c6e26d1479f6fd42a8bda1aa0f5a6e8e63fc1e2909aff8fd13d3001c33"
+    },
+    {
+      "trace_id": 4,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000004.csv.gz",
+      "sha256": "b6a6257116c35ff010cfa92b94d44bd5eb3ccfebcab9652536914db6459de06d"
+    },
+    {
+      "trace_id": 5,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000005.csv.gz",
+      "sha256": "198f80dad1ee6d4abf8931bfd066ebc239d76765c0647f5676ded67550f3c285"
+    },
+    {
+      "trace_id": 6,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000006.csv.gz",
+      "sha256": "4d1556bfd6693feb9ec4f73f2e6fdbe135fe2b2c84de1133122c1fb55dfa2117"
+    },
+    {
+      "trace_id": 7,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000007.csv.gz",
+      "sha256": "72e2f8f5718487107462c35fbba78a0320b74cd33e19e2c80b88aad72ff019c0"
+    },
+    {
+      "trace_id": 8,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000008.csv.gz",
+      "sha256": "a000da27da4ffd8320ba25b90329e0f846c697216927e72f514291cced59603d"
+    },
+    {
+      "trace_id": 9,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000009.csv.gz",
+      "sha256": "966746858e2cf23712368d651e337ca86586802ef62823f930b6e556dd4ed18b"
+    },
+    {
+      "trace_id": 10,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000010.csv.gz",
+      "sha256": "bab540bc364e429f491814f5abdfe71ac36999ee7a0cb5a27fc69709cc8d35c3"
+    },
+    {
+      "trace_id": 11,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000011.csv.gz",
+      "sha256": "e1b6089a3b1e9d22bbe3fc28084dce6e2575dafe53d0add8fcccfb6d9d0f3c30"
+    },
+    {
+      "trace_id": 12,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000012.csv.gz",
+      "sha256": "bb6a3e7e8f5734e449fa0c7dc7c4938e8c01ccf9be5c58a4e66cf3ee63912951"
+    },
+    {
+      "trace_id": 13,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000013.csv.gz",
+      "sha256": "03c4ad529075641770b0aa43d906939648c769dd7c01ad62d7d26cca444b7449"
+    },
+    {
+      "trace_id": 14,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000014.csv.gz",
+      "sha256": "23d8c9e2c4949dabbc94f594ab93b88e7fcd287f422bf047e1f72a73b4a5a117"
+    },
+    {
+      "trace_id": 15,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000015.csv.gz",
+      "sha256": "f49abd26d72442da3f45fb125bef0ae125b7c2d0ba0d9040fc07414a773241ba"
+    },
+    {
+      "trace_id": 16,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000016.csv.gz",
+      "sha256": "ad6d5d06782a841beec19b8fa4fa90632dc3ce52e705d0a1126b5133ba43c3f8"
+    },
+    {
+      "trace_id": 17,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000017.csv.gz",
+      "sha256": "3536484df60e92a8e8d2656f753dee475013d3ab00a0b0264c08dfae0f3911b4"
+    },
+    {
+      "trace_id": 18,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000018.csv.gz",
+      "sha256": "1b309a249c059889a405b0bffb69d41c823a2c891f057bce2c286e3240240810"
+    },
+    {
+      "trace_id": 19,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000019.csv.gz",
+      "sha256": "f8c9e41ea7c42058f64e3815438d97aa7b1b3842a9884090fbcd02c8f66eb698"
+    },
+    {
+      "trace_id": 20,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000020.csv.gz",
+      "sha256": "1daf1e768cfb68a2a15dca2087fd703c4b666ea849deb69be013b13b5b941602"
+    },
+    {
+      "trace_id": 21,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000021.csv.gz",
+      "sha256": "8c5b3dea6518dfeb97ea35dbde717b28231cbd71d708e9e4abb37539e1113007"
+    },
+    {
+      "trace_id": 22,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000022.csv.gz",
+      "sha256": "c66fa2676ab8063106ac73e2e42ef51f6ad08db6a02406546537bc807ba277ff"
+    },
+    {
+      "trace_id": 23,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000023.csv.gz",
+      "sha256": "fe0d134ab334a224cc2eef5bcb1192ad81f6c154a86b0851b7fff7b42f7db9cf"
+    },
+    {
+      "trace_id": 24,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000024.csv.gz",
+      "sha256": "b22a2bef30e509ac0e89b5c90b1669e1e699fa8abadff793c550b663c22643ed"
+    },
+    {
+      "trace_id": 25,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000025.csv.gz",
+      "sha256": "f2664fc6e42e80f43a3818dbf38e43b06ba4d4088fbc6a4e5d1aa43bfaf28876"
+    },
+    {
+      "trace_id": 26,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000026.csv.gz",
+      "sha256": "4f9c73089e397c0f903f2eea80a4e9decde9abe78c4bab08a49f9722fa0970a9"
+    },
+    {
+      "trace_id": 27,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000027.csv.gz",
+      "sha256": "a039e40cf4c4f427b572ad1af326cfdb513af74729acc32948d9af728cee76c0"
+    },
+    {
+      "trace_id": 28,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000028.csv.gz",
+      "sha256": "cf6eb28abcf9d729716bf5c9e413e9e35ac481c3fde9f54ec6adc7713a460c4b"
+    },
+    {
+      "trace_id": 29,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000029.csv.gz",
+      "sha256": "a5634d3189ab2f61b8b61a5bbdc98151bb01bf2c59c5226a55aa744258796e74"
+    },
+    {
+      "trace_id": 30,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000030.csv.gz",
+      "sha256": "6c4427b8f55f400ea77d7af32769c95c7029f6ffbabb59055166122db14ed763"
+    },
+    {
+      "trace_id": 31,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000031.csv.gz",
+      "sha256": "bb1cf032692b3b73eae8716e2e6dc51c5a482bb42a55a86745964c99f51faf52"
+    },
+    {
+      "trace_id": 32,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000032.csv.gz",
+      "sha256": "6ce09a2f7136c0cd57ef1e9482ef289bf75b760fb833392c2df199b446fe7ce8"
+    },
+    {
+      "trace_id": 33,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000033.csv.gz",
+      "sha256": "8abcba386d7f7c1ae32d3c2518db5d7ceb3352e63bc5d8e1f867b1674fd9c5c1"
+    },
+    {
+      "trace_id": 34,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000034.csv.gz",
+      "sha256": "07741786207c9af6342be0bdbf4ba9d28dc17042387e2f41cb521360c1e6eb08"
+    },
+    {
+      "trace_id": 35,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000035.csv.gz",
+      "sha256": "2a0d10972b2bf56891367a9777e8af0e87d1da623266a4aeab1e9587fa508e4d"
+    },
+    {
+      "trace_id": 36,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000036.csv.gz",
+      "sha256": "3f104888d4c743c78b25ce3b16da5de5e02e8ebf9663ab1661d95a5846d928b8"
+    },
+    {
+      "trace_id": 37,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000037.csv.gz",
+      "sha256": "55f5f52897b7cba06d0eb3f9e25b5956a23b771e6ecf273a6bd852c08c61c4ff"
+    },
+    {
+      "trace_id": 38,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000038.csv.gz",
+      "sha256": "3099aeaf57c18cad5b7a303de97376dc544c875e9b552a919a0dc6183a31ac1a"
+    },
+    {
+      "trace_id": 39,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000039.csv.gz",
+      "sha256": "efbf5fee83bc5c702bae83cdc92ea861d42cd30865ef741bb81e09fc930f6f97"
+    },
+    {
+      "trace_id": 40,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000040.csv.gz",
+      "sha256": "d91fce17691e659281067ae2c58b1137850e5deaef1ca2038d96c4a9102ab612"
+    },
+    {
+      "trace_id": 41,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000041.csv.gz",
+      "sha256": "6b496712eb964ab1d2b3616f2e5c7959551667b6eb59055ddc8d8d24f176af07"
+    },
+    {
+      "trace_id": 42,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000042.csv.gz",
+      "sha256": "4387654c60fe28bea3d641d3b4db9fcc44879d0a67129ca0c9e842740c1d14ee"
+    },
+    {
+      "trace_id": 43,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000043.csv.gz",
+      "sha256": "185271f92654b4506333258a28b2874bdfbec9120060ef3aa9851ca94076f2e6"
+    },
+    {
+      "trace_id": 44,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000044.csv.gz",
+      "sha256": "2138effdedf1ab59bd721121df0ee5b0f88e3a1f05f7dc994c7cae545731a837"
+    },
+    {
+      "trace_id": 45,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000045.csv.gz",
+      "sha256": "5f0286b016b8362268b8b0a9fa1e8d70c2acba0dcba35d0b4acd9911d4a3eabf"
+    },
+    {
+      "trace_id": 46,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000046.csv.gz",
+      "sha256": "803e50bc02dae562b653ff889591027d32b9bc6020618b825bc19bcc9100e0b4"
+    },
+    {
+      "trace_id": 47,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000047.csv.gz",
+      "sha256": "c70ef132c486f38c9f5c30670654c05b0cc9f62e54cfaf71533f0555fce2f12b"
+    },
+    {
+      "trace_id": 48,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000048.csv.gz",
+      "sha256": "c93ed227e20c023d691a9b953ae80227744f52ec5340a5aa883e3e6af66c8a4d"
+    },
+    {
+      "trace_id": 49,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000049.csv.gz",
+      "sha256": "47b7c1f4410f41a199bf281f3e83f8e5dfab420dc6d84e7bf2b53fefc497980f"
+    },
+    {
+      "trace_id": 50,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000050.csv.gz",
+      "sha256": "5b3f999b147d6755cc359571d9ccf770895c9783b0c46d2eeca72b7938d63f6c"
+    },
+    {
+      "trace_id": 51,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000051.csv.gz",
+      "sha256": "5b555bf1e458a0bc897e549e6c72d4be56d8af6ae64be76558a5da70467b5471"
+    },
+    {
+      "trace_id": 52,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000052.csv.gz",
+      "sha256": "a8fead0d73725b97010d1ff1be6a8652a31622e6ab8d931128210d66248951c6"
+    },
+    {
+      "trace_id": 53,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000053.csv.gz",
+      "sha256": "38b101fd2f5230253847a9e9bcd20d89a6ba0ceb72407fab46ada597aa72eaea"
+    },
+    {
+      "trace_id": 54,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000054.csv.gz",
+      "sha256": "979ac3c05654dda53f22df9d7a5649f825f3026a48792d49c235773aa44d21e8"
+    },
+    {
+      "trace_id": 55,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000055.csv.gz",
+      "sha256": "3ece15fe36cf0af8a66f24b04879137c701d6858d59d5e1a5c541954c757da24"
+    },
+    {
+      "trace_id": 56,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000056.csv.gz",
+      "sha256": "c5562a3e92eaa1fe78425298f3593750e323880f2c559af4e7a17c1d42f18eae"
+    },
+    {
+      "trace_id": 57,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000057.csv.gz",
+      "sha256": "5653554ce96595b66c6be5409f262ce283db0425fad18a00536d986190560e14"
+    },
+    {
+      "trace_id": 58,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000058.csv.gz",
+      "sha256": "d1f779d96b79438c67ffa8738e37001b0b269376f9279e50a86093fa36764b0b"
+    },
+    {
+      "trace_id": 59,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000059.csv.gz",
+      "sha256": "ce674b8f0a9712bf994193bf291c3f76843939272151e98a42a0a22374e32924"
+    },
+    {
+      "trace_id": 60,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000060.csv.gz",
+      "sha256": "68d7580ce85387fc53940c24b9b708892c16415d8a5b38b577735833e684ebf2"
+    },
+    {
+      "trace_id": 61,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000061.csv.gz",
+      "sha256": "6693a3dbebeb13453014b5b6e628e08fbdde4427373b714ca24af8649bfc1fc2"
+    },
+    {
+      "trace_id": 62,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000062.csv.gz",
+      "sha256": "7f177a18ae8a7982ef6fc48912e3639fcdcc431620b4855868fcb7e0e17bc85c"
+    },
+    {
+      "trace_id": 63,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000063.csv.gz",
+      "sha256": "bed690d2dc04b72e5518ff49e7de6a98febcd183dfe40fd840b2b62c8cc96f29"
+    },
+    {
+      "trace_id": 64,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000064.csv.gz",
+      "sha256": "b2bb4a9a5fa41f7a791f6a09c3f8f182d5907c5e5bc42dd0a93ba94b39d78d40"
+    },
+    {
+      "trace_id": 65,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000065.csv.gz",
+      "sha256": "3ef36557a197b17d0a1cf777a780005e498651f4925845b0845b44fe2a0cb8a7"
+    },
+    {
+      "trace_id": 66,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000066.csv.gz",
+      "sha256": "69a5e55e6d3e2bf1613f170cefd4890095904cc75a8322bf339be8259842f4a1"
+    },
+    {
+      "trace_id": 67,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000067.csv.gz",
+      "sha256": "c147248916ba470b7656c15880a13e00907aa9fe330698d09fd6c97ebfe3646b"
+    },
+    {
+      "trace_id": 68,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000068.csv.gz",
+      "sha256": "bd6096da16cc2b7f23e739b18d92bc18b1bdc8e821bdfe1b28dde433f6e41012"
+    },
+    {
+      "trace_id": 69,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000069.csv.gz",
+      "sha256": "989848166a7e5ca26e82734d65322a2ac7173a798254a77cbdcce8233371c847"
+    },
+    {
+      "trace_id": 70,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000070.csv.gz",
+      "sha256": "545579d98a9cd5cfdac692785174c8e00f9c29ac5351997452d8250d13412774"
+    },
+    {
+      "trace_id": 71,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000071.csv.gz",
+      "sha256": "28b64dbec277d091eb4fb6c777885092c0ddb6dc1d0e52e81898b1ca573b3bf3"
+    },
+    {
+      "trace_id": 72,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000072.csv.gz",
+      "sha256": "ba2b5a64bc6784d90834becbb3227b98a3b04734f4265dce642e33b58e6629ec"
+    },
+    {
+      "trace_id": 73,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000073.csv.gz",
+      "sha256": "a442a16a7b3a27b31351febc715d5b049f783e4b9e96377bb3d815d77d2c7357"
+    },
+    {
+      "trace_id": 74,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000074.csv.gz",
+      "sha256": "500b846a08ecdd8a21cbbc15f7542dd0fc404a1c0713b905ce2bc859d142916a"
+    },
+    {
+      "trace_id": 75,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000075.csv.gz",
+      "sha256": "218ec8167c30d6f0cc6e9a0635e282eb547c766495a660e145296cfa45c6faac"
+    },
+    {
+      "trace_id": 76,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000076.csv.gz",
+      "sha256": "c613b29e39627992f89e386daa3e8fb2d98306deac115c1c9a225784018384ad"
+    },
+    {
+      "trace_id": 77,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000077.csv.gz",
+      "sha256": "6e03631326b02f0360f294b33e7da1a3eaabcf9b2f28fab21a2e79936f283127"
+    },
+    {
+      "trace_id": 78,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000078.csv.gz",
+      "sha256": "ee7b6b74823ca3255ccefbc5e83847cde7821da51cfd017f4b455e8bc8a96bb2"
+    },
+    {
+      "trace_id": 79,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000079.csv.gz",
+      "sha256": "7ea7676bd3be6928c8b1d7a0065605f3f6a97b0df445d7c77b3780939f4a17bf"
+    },
+    {
+      "trace_id": 80,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000080.csv.gz",
+      "sha256": "4a6271036621a5876d5392ac56ce55f93bc536252f02f7abdee488ff7d1f9afb"
+    },
+    {
+      "trace_id": 81,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000081.csv.gz",
+      "sha256": "e63f6fa7a2e3612270ca8023192a5b0aa2de7c1560096d1a96716d237b6b6ca0"
+    },
+    {
+      "trace_id": 82,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000082.csv.gz",
+      "sha256": "eb2d6b29769f6a855bd3adb817d5152ea3a7196c2965d607373a71af503c5dcc"
+    },
+    {
+      "trace_id": 83,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000083.csv.gz",
+      "sha256": "8ba71baab0561138b3939426692130dda9ce51ba1c65db6e9080060e7a76ae45"
+    },
+    {
+      "trace_id": 84,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000084.csv.gz",
+      "sha256": "7713dd96b3f658955a3ebd77da9b9291eba595e3ec2e3f3486bebdfa8bf0e401"
+    },
+    {
+      "trace_id": 85,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000085.csv.gz",
+      "sha256": "7f80cbbb91d6eb9f30a050e77204288d41f1509968378c7810264752b7531e14"
+    },
+    {
+      "trace_id": 86,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000086.csv.gz",
+      "sha256": "eb5b0cd70d331d38fdcafaf73ef0161720aa6ed1ead2b90d173baa25d2b8bd94"
+    },
+    {
+      "trace_id": 87,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000087.csv.gz",
+      "sha256": "cc95a02139e0548893c7fc46b776b46ccf2a4b9f39c421eadcb9e09cc0ed166a"
+    },
+    {
+      "trace_id": 88,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000088.csv.gz",
+      "sha256": "aaf0732534929c2fe7a6e957f18c677412bd41fad4b02f57ff11a1d6e0eeaf4a"
+    },
+    {
+      "trace_id": 89,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000089.csv.gz",
+      "sha256": "d4241262be74d94c13233b1e6f61ddb4fdb0e5f10685f3904a0fce116ead8004"
+    },
+    {
+      "trace_id": 90,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000090.csv.gz",
+      "sha256": "6b22983f45905862872bc9892f586e4ada9ef3d497acccdfafb187f465e69152"
+    },
+    {
+      "trace_id": 91,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000091.csv.gz",
+      "sha256": "1878dcfc21ef174e7f137d467c006d86d1363906945e404e43fc4e67741e8137"
+    },
+    {
+      "trace_id": 92,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000092.csv.gz",
+      "sha256": "b7255db83ebaa80cf1538e10a5a147606e79d740686476dfd24e6f6f62f1855d"
+    },
+    {
+      "trace_id": 93,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000093.csv.gz",
+      "sha256": "49180a3bd648c8a6bdcd3e79ba44a72325006d8bd448faccb507a50a612a4818"
+    },
+    {
+      "trace_id": 94,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000094.csv.gz",
+      "sha256": "2523c23be5684ab0b93debff0949e1990200c2193d6a67d33c1c5851b3221a6b"
+    },
+    {
+      "trace_id": 95,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000095.csv.gz",
+      "sha256": "371a8b73f23dcce326cdfeee97d42d90193c3eb08b3a6486f2695e6a18d1391d"
+    },
+    {
+      "trace_id": 96,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000096.csv.gz",
+      "sha256": "697b36d2c210a9bacc17f7d6e081bdfdd42ffa51063e71109517c20a66c2d31e"
+    },
+    {
+      "trace_id": 97,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000097.csv.gz",
+      "sha256": "cceada30e3fe3a025bd26543b67f817aaf8b5699640fb630e75fdb28fde78e52"
+    },
+    {
+      "trace_id": 98,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000098.csv.gz",
+      "sha256": "176c6eedafd89f8726a15a67f95083513f8f0ff7afe9874da3f6d6cd958a64c0"
+    },
+    {
+      "trace_id": 99,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000099.csv.gz",
+      "sha256": "108045283d299fc99494e4243ba252aeda6aa8370963411e4eb2490541b01319"
+    },
+    {
+      "trace_id": 100,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000100.csv.gz",
+      "sha256": "0421785e99a7bfe08bf39ef17e10277af1bc00b99fb62ded2bb49661f83946ea"
+    },
+    {
+      "trace_id": 101,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000101.csv.gz",
+      "sha256": "b72959b469f3bb9cd01b70f2ead95e2e6ac4a4a941d1d4adaf65f3a7fe5d55c6"
+    },
+    {
+      "trace_id": 102,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000102.csv.gz",
+      "sha256": "83fb79f5b81f8b3c41c2335ebce170bcddebc9a2a65e5661491696f443802b7c"
+    },
+    {
+      "trace_id": 103,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000103.csv.gz",
+      "sha256": "6350b5e7653b8a0d1c96369a78450c2a6467f9a3c44313412780ce050888f0fb"
+    },
+    {
+      "trace_id": 104,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000104.csv.gz",
+      "sha256": "41224e8f48a678066ca1ef259cce6f07bfef41a3739e80046f29f5453174888c"
+    },
+    {
+      "trace_id": 105,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000105.csv.gz",
+      "sha256": "144b2065b4da6ed814aa49fe1b05fce4ab45ff6599a91fb9e216bd8e165b171a"
+    },
+    {
+      "trace_id": 106,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000106.csv.gz",
+      "sha256": "b60cae21f555c4160408e718eab09b1ec2eecf8a053d11035ee9885663e16a1a"
+    },
+    {
+      "trace_id": 107,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000107.csv.gz",
+      "sha256": "0edb7beef11048c31b617724215f2ef91d69f290d155ae6683f7d704696c584a"
+    },
+    {
+      "trace_id": 108,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000108.csv.gz",
+      "sha256": "631a7da82efdcb2149aaab4d4b8a6f2e01ac2221723da9e24a4abf52139ba95e"
+    },
+    {
+      "trace_id": 109,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000109.csv.gz",
+      "sha256": "e8d06d443a62a287e1092a7b074230f05607249b14b20900e70d8c9e010b384d"
+    },
+    {
+      "trace_id": 110,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000110.csv.gz",
+      "sha256": "bc6017f91cf1fb4a189fd111746a7d8ce058f304a5b5904f32038d5a46450b03"
+    },
+    {
+      "trace_id": 111,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000111.csv.gz",
+      "sha256": "690039a65f17e56f25008c66072b3a7e46f84864ef80ebc0759ccc1588fa9f31"
+    },
+    {
+      "trace_id": 112,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000112.csv.gz",
+      "sha256": "f4afb03263aa82a75205be77ebcf101a4762c1295bfacef34066671355396b70"
+    },
+    {
+      "trace_id": 113,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000113.csv.gz",
+      "sha256": "0b407c0bfb0ccf0fd74d6a6a8749850633e489700f28ca137e6e2f7511c2a18c"
+    },
+    {
+      "trace_id": 114,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000114.csv.gz",
+      "sha256": "f44f0e5bcf8ba46895661e769b11a606480d394cf6ac379de6851527a9257668"
+    },
+    {
+      "trace_id": 115,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000115.csv.gz",
+      "sha256": "b76ff3e7a3fab6c066a165d952f25b1e67af216f6357cd9da9f2ecb11ab4ad90"
+    },
+    {
+      "trace_id": 116,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000116.csv.gz",
+      "sha256": "33aa10873f37c3d24678666a1a6382024ba6521ad9820dd3eeb06f8921bccd37"
+    },
+    {
+      "trace_id": 117,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000117.csv.gz",
+      "sha256": "9f300ebda6170116c287219db7e4924395b2e00ef8522d691ad08d29f15c89df"
+    },
+    {
+      "trace_id": 118,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000118.csv.gz",
+      "sha256": "a5eb5996487081f901ee3a8342399ec30f19a5e07ca9a46b2093dc849cc323b6"
+    },
+    {
+      "trace_id": 119,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000119.csv.gz",
+      "sha256": "50a2507a4a64fe11664adcd5c7c0830f6f940d7d1f9e803acdb6a529981ae759"
+    },
+    {
+      "trace_id": 120,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000120.csv.gz",
+      "sha256": "84e6eb47d7b851ede33b713c2a686bbcfd924074900b4690be4cd6c10b82c034"
+    },
+    {
+      "trace_id": 121,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000121.csv.gz",
+      "sha256": "64ef67da0eb6846f93ab1fd0cdf01c30b04fc9265f9b89967af9e34930b31b84"
+    },
+    {
+      "trace_id": 122,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000122.csv.gz",
+      "sha256": "519ae733ed092eec908a5b505f86b3847c2d291f34bc68e72378167ae15fcab9"
+    },
+    {
+      "trace_id": 123,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000123.csv.gz",
+      "sha256": "83109c6392ae9d4d8f99bd14f9ed709fd32abc226ac1ebb9efd1e7099e794ce8"
+    },
+    {
+      "trace_id": 124,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000124.csv.gz",
+      "sha256": "6f4384d7b80c0dc455476a0267b961e59705655de48935ab2e658c114615efc6"
+    },
+    {
+      "trace_id": 125,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000125.csv.gz",
+      "sha256": "90a66b39bbacbeac093258ec5febf15dac5353cf081a2e08b360e380410738f3"
+    },
+    {
+      "trace_id": 126,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000126.csv.gz",
+      "sha256": "199c683b348ef38cd0e24d432c4259b7823fb827fbb40fb98dfe6b1e8b827c75"
+    },
+    {
+      "trace_id": 127,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000127.csv.gz",
+      "sha256": "2865b709180e85359dbf0847197714550d4a61a3ec3a23f8512fd55e89f23565"
+    },
+    {
+      "trace_id": 128,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000128.csv.gz",
+      "sha256": "c6798718c6aea31db6a9c972e66e218fe32ec09722f9f186458a978781f897b9"
+    },
+    {
+      "trace_id": 129,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000129.csv.gz",
+      "sha256": "615c5ac3573a3daed8242f5b3e50edea7c92cd585ba330f34f3dbfdb66314020"
+    },
+    {
+      "trace_id": 130,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000130.csv.gz",
+      "sha256": "0da8343b5f49d5aabd5e9a4b721f7485bf0fcb4c136d09091c881ad8820bd309"
+    },
+    {
+      "trace_id": 131,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000131.csv.gz",
+      "sha256": "90cad1caafa74e7df69e849f17efa4fceb7f9f5c4ed8666f166ec5b696622c1b"
+    },
+    {
+      "trace_id": 132,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000132.csv.gz",
+      "sha256": "7d19455b78e4a64628907a2e7a6f61fdf75c76a552b3d4f888babacec44f85e0"
+    },
+    {
+      "trace_id": 133,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000133.csv.gz",
+      "sha256": "ba70c52eb6cbd9e79d70af3cfc697552525b1345231b98760466da4aa436b2bb"
+    },
+    {
+      "trace_id": 134,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000134.csv.gz",
+      "sha256": "2770a579a856c588ea40747451df9340f1183ab09703d086cd99a2be481f2d61"
+    },
+    {
+      "trace_id": 135,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000135.csv.gz",
+      "sha256": "9c8bf318909fb1498a388fc695a1f23ce3e83da6a7adc3cac2f89424cf67238d"
+    },
+    {
+      "trace_id": 136,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000136.csv.gz",
+      "sha256": "5c317263ce4f794debfc8115d76990d00c251b54020f552345eb21613cb1110d"
+    },
+    {
+      "trace_id": 137,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000137.csv.gz",
+      "sha256": "230e7d8e7a24f19050c011aee6567e8b2b010b2ba3b10033753145267b7a7f7c"
+    },
+    {
+      "trace_id": 138,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000138.csv.gz",
+      "sha256": "7b1a99b1ee34a1d3528d8bf446fc855cc94969668a3a0a3a118864300b929202"
+    },
+    {
+      "trace_id": 139,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000139.csv.gz",
+      "sha256": "1c291346433486de42e5281d47dd1de3d9b3614c928e5219f90ddd9478d9ad96"
+    },
+    {
+      "trace_id": 140,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000140.csv.gz",
+      "sha256": "a4b2fef725f1b9d767f65f4190cd4575d709d427c6861899766f46eb82fae056"
+    },
+    {
+      "trace_id": 141,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000141.csv.gz",
+      "sha256": "396e84acaee3c24f429336739fa7332a1a7b305a68cddc7278176bfb9e97366a"
+    },
+    {
+      "trace_id": 142,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000142.csv.gz",
+      "sha256": "ba93c7c8f64b12b8417654c5d5fe30f3f166a45ffbbd3ef88e4c0647db15fe88"
+    },
+    {
+      "trace_id": 143,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000143.csv.gz",
+      "sha256": "2e239c99d5dcbbd09a15d7c4851ee209601ae7459baebc4b6a881921cc054a78"
+    },
+    {
+      "trace_id": 144,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000144.csv.gz",
+      "sha256": "22c3b443f595ba935ada407152e2cb1c4c508afc3f098323f949cb3add787f6f"
+    },
+    {
+      "trace_id": 145,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000145.csv.gz",
+      "sha256": "cbe7a78e83f1bd5495d4b0d68e9d1136dd7a9e97c3bab00558192c0823477203"
+    },
+    {
+      "trace_id": 146,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000146.csv.gz",
+      "sha256": "97ab5a45d1cde973242fbf2164c7f509e6e62ca6e2e092a514735024ba9a981d"
+    },
+    {
+      "trace_id": 147,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000147.csv.gz",
+      "sha256": "d64931c1d5b77707e5f26d5ba9ddc01c34309684c2a7fc00fcecf3e26d29e46b"
+    },
+    {
+      "trace_id": 148,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000148.csv.gz",
+      "sha256": "0a01fc651ef9d4f71bb419a8242dd41148c603ac75bd43c838f7ecb126738d3e"
+    },
+    {
+      "trace_id": 149,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000149.csv.gz",
+      "sha256": "8726faf1aefa19e3fb41f8094ecdbfca3b9f20c08763f7706bb00a386093e26c"
+    },
+    {
+      "trace_id": 150,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000150.csv.gz",
+      "sha256": "fbce2729d663577a008e00a204b6cbcb86e314e3b5817e95d0c114e7cccb9b21"
+    },
+    {
+      "trace_id": 151,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000151.csv.gz",
+      "sha256": "f4730374abb4feef6741d15bb1ce2f659177498552bfec8f3e8cd3e3005135c9"
+    },
+    {
+      "trace_id": 152,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000152.csv.gz",
+      "sha256": "feb5d68676fd5a9d7b1b56372076e146c0e26f406250f719f20646325d62036f"
+    },
+    {
+      "trace_id": 153,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000153.csv.gz",
+      "sha256": "6ec944bba12da401f5b72a56441ac9f7f735ad2a553f8ec269fdeb06e90d4446"
+    },
+    {
+      "trace_id": 154,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000154.csv.gz",
+      "sha256": "02efdd4d09be9687bce688534c506ee8f962ac122057b4de4634152b6d637483"
+    },
+    {
+      "trace_id": 155,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000155.csv.gz",
+      "sha256": "03ba1904bf6a78bfa1619a0b46115a72209f4c3fee33f879e36cc7bb786fae12"
+    },
+    {
+      "trace_id": 156,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000156.csv.gz",
+      "sha256": "66d5a53130bada6638c6932d6af5371b3edba7e1cbf5f252bdbf6a44c9cb4594"
+    },
+    {
+      "trace_id": 157,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000157.csv.gz",
+      "sha256": "b3ab1a642c860629a2a0364b10f92f7b11235edbc12f5437f5854bc9b71fd5ef"
+    },
+    {
+      "trace_id": 158,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000158.csv.gz",
+      "sha256": "4541ae951c7a4c4f4b4a65e9786705cef3f827860c83e016bb8070e8f5fc2b6f"
+    },
+    {
+      "trace_id": 159,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000159.csv.gz",
+      "sha256": "bf04400d2274608fc57b789517c044a7df83918a466c1ec777d9c8494263dc64"
+    },
+    {
+      "trace_id": 160,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000160.csv.gz",
+      "sha256": "9304ede884f51f87fc9095c17c2bb46cf988698d65461bca98d4c117a12b33dd"
+    },
+    {
+      "trace_id": 161,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000161.csv.gz",
+      "sha256": "d1296b385ad98bd3f0269819c054b9d0bfbddcf9f18d6bb77dca546623e0acfe"
+    },
+    {
+      "trace_id": 162,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000162.csv.gz",
+      "sha256": "98a228994c62306280072e676e15d37eaa156b1981a515d4d41897546ce325d2"
+    },
+    {
+      "trace_id": 163,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000163.csv.gz",
+      "sha256": "2b3a7fcba7164b628860f18a59d68c5a4b000a3f48cc69587363c72454971bfd"
+    },
+    {
+      "trace_id": 164,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000164.csv.gz",
+      "sha256": "ca820fb94846679bedc7a10c7a5c245220e61483526bd9890d46389329296791"
+    },
+    {
+      "trace_id": 165,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000165.csv.gz",
+      "sha256": "3b6ef0e220cb2d251c9d0b6f6c03af4d31d6492c42b17e44f6dec31caebd7a33"
+    },
+    {
+      "trace_id": 166,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000166.csv.gz",
+      "sha256": "47ae1739651e6cc4fa43d60ee1a0461a2a6d0d9b9b954a79fa94aeece9d5ffe5"
+    },
+    {
+      "trace_id": 167,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000167.csv.gz",
+      "sha256": "3db9ef8398344ffe9e144a6eeeda53422eec0156b2ff279a226def62ccd86ff2"
+    },
+    {
+      "trace_id": 168,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000168.csv.gz",
+      "sha256": "c90338c6c168a0b0332406dc97cfcb686bc356f65011d29439efb16577e6a9dd"
+    },
+    {
+      "trace_id": 169,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000169.csv.gz",
+      "sha256": "3970209a60782e4ac610588460f22f6bceea0703402d89a5ce20e82e414de027"
+    },
+    {
+      "trace_id": 170,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000170.csv.gz",
+      "sha256": "c532b2449607a72354972221d1c5d6d91d02634ad2b9a03008112b294c67f816"
+    },
+    {
+      "trace_id": 171,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000171.csv.gz",
+      "sha256": "88c0f701c544a4eb5b43b39fb3ec1a482df70c6eb50f4fa48d0dcc9169a44527"
+    },
+    {
+      "trace_id": 172,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000172.csv.gz",
+      "sha256": "be9fa7c8d04e90d7a244959db5305f60c194658a2a9ac8c2091a378a5421f407"
+    },
+    {
+      "trace_id": 173,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000173.csv.gz",
+      "sha256": "717b56eb16e1e0e53ad8f08b3239160e9ebe47667927166387a71680dbd380ba"
+    },
+    {
+      "trace_id": 174,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000174.csv.gz",
+      "sha256": "00ffaf55cb2e19ca472e315fed47f6421a129ddbb2dd797e5501e9e81431c3b4"
+    },
+    {
+      "trace_id": 175,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000175.csv.gz",
+      "sha256": "8582dd9a6584ce264bf0102a05f2366527947321645993353d62edf017c06a55"
+    },
+    {
+      "trace_id": 176,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000176.csv.gz",
+      "sha256": "2c05dfef1f09e489b59f41fe5ec850342110dbb361ea0d9edeb19bf3cc46f81d"
+    },
+    {
+      "trace_id": 177,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000177.csv.gz",
+      "sha256": "0b7dee6c21c3c8ec2a14d51964fd4604c8f929171eb31a0f0e9302f2a17dc402"
+    },
+    {
+      "trace_id": 178,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000178.csv.gz",
+      "sha256": "857e06d3011b9a59aa5397d67b67c6cfd76d11a8818b3b5e5932612d28b2e50e"
+    },
+    {
+      "trace_id": 179,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000179.csv.gz",
+      "sha256": "83b7eee588b914d3b69b1902831b8da8e1f5cfd8532a8af9f350722ee8b10d7a"
+    },
+    {
+      "trace_id": 180,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000180.csv.gz",
+      "sha256": "d2d55e33689da7e3c386eb4c98ae50318b4e6325b5166b642d4a3cabbe88dae6"
+    },
+    {
+      "trace_id": 181,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000181.csv.gz",
+      "sha256": "b88d622a387c957f911a2eed8cf6608cfb8a86a9364d5e589d4b060d1c366956"
+    },
+    {
+      "trace_id": 182,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000182.csv.gz",
+      "sha256": "25be659080c7d8ce0788862de6c7e0b83340415488e222a53c3a31d609910b6a"
+    },
+    {
+      "trace_id": 183,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000183.csv.gz",
+      "sha256": "c780678188fd15e087ca359b434530143e4f3f8da628bbeb6b26d88606780db4"
+    },
+    {
+      "trace_id": 184,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000184.csv.gz",
+      "sha256": "87b58690772ac202604de8767d8852487541d3babc258f1a11a8b5f480403155"
+    },
+    {
+      "trace_id": 185,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000185.csv.gz",
+      "sha256": "1e32c8841c7bf68ee58e9b1a598ec9a91dfcac42132a685628dd76a7a3996944"
+    },
+    {
+      "trace_id": 186,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000186.csv.gz",
+      "sha256": "fc363880262f347eebb3500ee74c627ba5e35ef301714475c5808fa50b666f21"
+    },
+    {
+      "trace_id": 187,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000187.csv.gz",
+      "sha256": "6b1fc267b700475f45fff8b24538d5046bd88b0e1e5a48d575789cf52495d7c2"
+    },
+    {
+      "trace_id": 188,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000188.csv.gz",
+      "sha256": "65835779024030a6bd8b82b5a7b3d55a22a84154fed33e64f4db27630c7d564f"
+    },
+    {
+      "trace_id": 189,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000189.csv.gz",
+      "sha256": "1e268c560a0990ac0719bb475188660b74c1105feb42e4e13848df1680f3ec2c"
+    },
+    {
+      "trace_id": 190,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000190.csv.gz",
+      "sha256": "b40522dec39590425b80ef7efe5aa43b7dddc85db0c8e5b9d00ac5e7661296ef"
+    },
+    {
+      "trace_id": 191,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000191.csv.gz",
+      "sha256": "1881617f4f9cd605e8626c58a58bda6a5b53101278706e2eb53071d4fa52da37"
+    },
+    {
+      "trace_id": 192,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000192.csv.gz",
+      "sha256": "1f5d42b549143a482276d9a982b8bbe7067a2a134d576120b6365814c7025f5d"
+    },
+    {
+      "trace_id": 193,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000193.csv.gz",
+      "sha256": "8b447096077c3dca737ff04dfc3a37e186eebf5bfc990377846f7091348d76f1"
+    },
+    {
+      "trace_id": 194,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000194.csv.gz",
+      "sha256": "ebaf9c8a042718496bb2b9ed4e11539c86e04dd340931f0c405cd1dcfaa0b259"
+    },
+    {
+      "trace_id": 195,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000195.csv.gz",
+      "sha256": "98255f4e9ee1143ccb2762d841d59dcdadbf749aec1ac320d0d92da10d18d08b"
+    },
+    {
+      "trace_id": 196,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000196.csv.gz",
+      "sha256": "5a190be5f29589be16a445dd24a744a70330bc07850983962f1cd6faef83899e"
+    },
+    {
+      "trace_id": 197,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000197.csv.gz",
+      "sha256": "fa3e4f34bfa48ce0d410abca818d7d012907ef3eee076910e465597007e0f777"
+    },
+    {
+      "trace_id": 198,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000198.csv.gz",
+      "sha256": "78da29d85d9079b73fb3302e18528c48a9f7875e74e15b2bfb6a1be48cdee2ed"
+    },
+    {
+      "trace_id": 199,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000199.csv.gz",
+      "sha256": "76b2f5965216282492550b1a2e608f90046bc9d9e2eae77a31f64bf6fca76de2"
+    },
+    {
+      "trace_id": 200,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000200.csv.gz",
+      "sha256": "c50899ebc1db9d235d1e002de69c7b94817efc24d9d6829332239d0463816440"
+    },
+    {
+      "trace_id": 201,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000201.csv.gz",
+      "sha256": "c4be739453f4100197475bdf895830463ab1231f0784644e3bd094b393fab390"
+    },
+    {
+      "trace_id": 202,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000202.csv.gz",
+      "sha256": "3b8a67e936ea30bc077a55a490c302ea09338acc61d6f31c02fd6551422cf20b"
+    },
+    {
+      "trace_id": 203,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000203.csv.gz",
+      "sha256": "8ff68eda1a0db5b31ba5bd07d9f3beac055ea3ab90b74b9a2b0d82eb014c0f3c"
+    },
+    {
+      "trace_id": 204,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000204.csv.gz",
+      "sha256": "d7f6368c4a0dbfc1dc8d9e70f159810f480f8f467b7f545adbb932763a1b796c"
+    },
+    {
+      "trace_id": 205,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000205.csv.gz",
+      "sha256": "7ca9ae216395ecb80ce8f656ce9effd6cdd19e940a4efc447ebef847f64cf86d"
+    },
+    {
+      "trace_id": 206,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000206.csv.gz",
+      "sha256": "02f6efabe9d74a375650971e40f2a8d30a78c2b3f244f9565d6a2e69b369ce0a"
+    },
+    {
+      "trace_id": 207,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000207.csv.gz",
+      "sha256": "db12512a7b5b6c3f45b54146b176cdc91508ae9e852f480e3d198fceb16f1309"
+    },
+    {
+      "trace_id": 208,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000208.csv.gz",
+      "sha256": "96f528763516b3434107154f663495758a555e6ded6d14a4c032c318a4c41318"
+    },
+    {
+      "trace_id": 209,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000209.csv.gz",
+      "sha256": "3b895a035db7ac734f58caaed1d66fca50a628e89c6f79b332644cf28bb41998"
+    },
+    {
+      "trace_id": 210,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000210.csv.gz",
+      "sha256": "57fd673056427801e0d00b6ea921f3487d048a8e56bd02bacfa2d48cff89aa73"
+    },
+    {
+      "trace_id": 211,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000211.csv.gz",
+      "sha256": "ca19b3f18d667fb03b70b4e98992b61ca4f6fe43534bc59b1189a6b164524dee"
+    },
+    {
+      "trace_id": 212,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000212.csv.gz",
+      "sha256": "aa7404c7409e73a4fd032643f61b6a9b3fe11c9ac4602eea775931e8b038717e"
+    },
+    {
+      "trace_id": 213,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000213.csv.gz",
+      "sha256": "51374ce8db57619f2df40776b802b3e0062d62b3429ace7e535a9e72cefd4d7b"
+    },
+    {
+      "trace_id": 214,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000214.csv.gz",
+      "sha256": "5803c3901ab2b7f121d0e49e0fdb9dec2d0eec5ad6a6fbbc120a9dd1ea2f105c"
+    },
+    {
+      "trace_id": 215,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000215.csv.gz",
+      "sha256": "e4eb04371c3f08d9351f089c64941b2152ffcd4ae829cf86478ff9301c7497a8"
+    },
+    {
+      "trace_id": 216,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000216.csv.gz",
+      "sha256": "1b1a23dcc2fd08aa696ac0e8c66fb3e63eda66ebec85e558c70dbbdf3ada329b"
+    },
+    {
+      "trace_id": 217,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000217.csv.gz",
+      "sha256": "f51be32bf2424e83cecb8868de943ea1e3da20c486b861ae8b745bc32356c660"
+    },
+    {
+      "trace_id": 218,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000218.csv.gz",
+      "sha256": "e3fa788d0c043c3f3270679cc009e808bbc01e2a1dd6eb6711cb03bf71b84dee"
+    },
+    {
+      "trace_id": 219,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000219.csv.gz",
+      "sha256": "da7c1ba120377ee9c03589366e9e475dcbac913353172574adae2c0d2f7a28ea"
+    },
+    {
+      "trace_id": 220,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000220.csv.gz",
+      "sha256": "6930e07d80e843bdfce9dcff5dbf73e4dea3e8f5c20de99636725ce597ccfd0c"
+    },
+    {
+      "trace_id": 221,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000221.csv.gz",
+      "sha256": "cc1eb902333d121a813fd9b776d41dcc40c13ebbc0184c32935f58f46f2146c0"
+    },
+    {
+      "trace_id": 222,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000222.csv.gz",
+      "sha256": "acf1d16822c8f3f9518f320adfbd29703c01f8525368223f1e266aa52d14669d"
+    },
+    {
+      "trace_id": 223,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000223.csv.gz",
+      "sha256": "92425156d389fb4d8832b652c0fb0086b666c484c2e58517600909a299e23b39"
+    },
+    {
+      "trace_id": 224,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000224.csv.gz",
+      "sha256": "60d47d7a348bb353815baa866d3a4b73cfb4c389a1f32181eeefa7f973d13bd8"
+    },
+    {
+      "trace_id": 225,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000225.csv.gz",
+      "sha256": "0eb168b55b65e8a34721395a4366c021094759fded3eaf4e641c36fd7afd6fa6"
+    },
+    {
+      "trace_id": 226,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000226.csv.gz",
+      "sha256": "92e4a7dc89c6d1af1fefe4e637bdb0714a5b08d2ba6b041548362f6b0dd5a6a1"
+    },
+    {
+      "trace_id": 227,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000227.csv.gz",
+      "sha256": "cff0c5b786251e10f4ccdf773e2c2b676255b4fd408adca27f0cbb08e65a53b3"
+    },
+    {
+      "trace_id": 228,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000228.csv.gz",
+      "sha256": "46e0b4880e360da12a1b43682f012a9a32e7b89aa7f952bf18824aa82c6fc47a"
+    },
+    {
+      "trace_id": 229,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000229.csv.gz",
+      "sha256": "fc9d232a1ba15c6046e7839f58feba4c9729f2087af82e4940d23e5a9d753649"
+    },
+    {
+      "trace_id": 230,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000230.csv.gz",
+      "sha256": "9f3370f1c08718de2ea5a344e71b89e12fcd5274bccb33e89dd7689cae7e789f"
+    },
+    {
+      "trace_id": 231,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000231.csv.gz",
+      "sha256": "00ec7ecdedfe1c235da11c9c7aa8f8e35cb42359a537fa717c0abb9617de22b3"
+    },
+    {
+      "trace_id": 232,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000232.csv.gz",
+      "sha256": "0ba0ed964030d4c8dd8b56e8ff86ac3411dc0af9748eaf6a89a6579435824457"
+    },
+    {
+      "trace_id": 233,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000233.csv.gz",
+      "sha256": "df9d42338869976451d8c359e801952b2222c157830b9e6f822576447163d10d"
+    },
+    {
+      "trace_id": 234,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000234.csv.gz",
+      "sha256": "1d5649065baae3a23060357c4861ccc5b102f430c8565ef86ecc27da1a78ee2a"
+    },
+    {
+      "trace_id": 235,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000235.csv.gz",
+      "sha256": "64710f5f85e08cce7117711d62a0796b32e0e8fed31f1632359d4d0340772af5"
+    },
+    {
+      "trace_id": 236,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000236.csv.gz",
+      "sha256": "eed2929c2e5a79ee51648bc23848cab53e121b8533f5ede61d913efd4296224d"
+    },
+    {
+      "trace_id": 237,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000237.csv.gz",
+      "sha256": "0bdb9deb1c78c62b108672d1d9d5e098c66a85c557708aed6fc1c6ce525a0059"
+    },
+    {
+      "trace_id": 238,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000238.csv.gz",
+      "sha256": "4c4a125227aa3f28c4ede95fb86319100cb912b28a832100379e4be1c2c3de8b"
+    },
+    {
+      "trace_id": 239,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000239.csv.gz",
+      "sha256": "d419012cd48079cb601c0d98c4a4be6da80b62204c637bba684c902bb817fec0"
+    },
+    {
+      "trace_id": 240,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000240.csv.gz",
+      "sha256": "5a9a7de052fa2a98a86f17f6e300f284fa90b0f71250249ceb74cc697d62ab60"
+    },
+    {
+      "trace_id": 241,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000241.csv.gz",
+      "sha256": "e1dd42515df029cb7e2ef94f29e7355826fa8ae835949f41120b0fdee07be743"
+    },
+    {
+      "trace_id": 242,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000242.csv.gz",
+      "sha256": "90b61c3546c91c6d994ede955cc9d0f65afe26ec87e284d329c1b7a7062f2c67"
+    },
+    {
+      "trace_id": 243,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000243.csv.gz",
+      "sha256": "f4b78bb693232a5665fabbe2459cd691648bb5906594c2d1f99ecbd536d1b2db"
+    },
+    {
+      "trace_id": 244,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000244.csv.gz",
+      "sha256": "eb5c8e4c5b26eb817ddb524e1199a98d254f71f5fb856394999fc46ca30fbf59"
+    },
+    {
+      "trace_id": 245,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000245.csv.gz",
+      "sha256": "ce03ab8886c72720dc7aab26407d756acf05de759d5ae48c0984b2d23f82c0d0"
+    },
+    {
+      "trace_id": 246,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000246.csv.gz",
+      "sha256": "6034eac6555cb8fb84777a955959784d81e82d2283fee68e0be72f5c8dd0754d"
+    },
+    {
+      "trace_id": 247,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000247.csv.gz",
+      "sha256": "75e0729297c8e7accb79cc96bcb60abfcfcdbcfb70e7b2b73ac6257066901366"
+    },
+    {
+      "trace_id": 248,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000248.csv.gz",
+      "sha256": "6164d441e300d6dc5627903e4e51387eb3635c3ee69c5544f869aaf0e4a57f6e"
+    },
+    {
+      "trace_id": 249,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000249.csv.gz",
+      "sha256": "a28ac4793dfb77f6f5e7f6741c7e64fa112bafae41f7ba69bb72407a4e90d607"
+    },
+    {
+      "trace_id": 250,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000250.csv.gz",
+      "sha256": "ae8b3a4bc3c4be9f31d10eca085ea715e0cc96f46681a1dd3ad269c797ac6b12"
+    },
+    {
+      "trace_id": 251,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000251.csv.gz",
+      "sha256": "db432b8e767d99032ede1cbf59f647f596639491e94ea0ec6a8af0e142b76ac2"
+    },
+    {
+      "trace_id": 252,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000252.csv.gz",
+      "sha256": "39d2e8d29ae8cf87c5cb41996a7af27492827772deed951ceb0ae092db1c735d"
+    },
+    {
+      "trace_id": 253,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000253.csv.gz",
+      "sha256": "8d6191a98d7f6b47d9e36e838dda60ce3304b9fc1cd859f21d9aab3d25f9104e"
+    },
+    {
+      "trace_id": 254,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000254.csv.gz",
+      "sha256": "8d7269de71ba3a3549a59970c9ebacaed31ef127b6da71e07ee910b41464f711"
+    },
+    {
+      "trace_id": 255,
+      "split": "train",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "train/trace_000255.csv.gz",
+      "sha256": "560831b6b8bd36eef73758d7cbd6785e977703c263ba326eaf772112f76079fd"
+    },
+    {
+      "trace_id": 0,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000000.csv.gz",
+      "sha256": "c89dc736588422dd86676f232fc1257847fa669b0027f5fa3504c7f5a8226498"
+    },
+    {
+      "trace_id": 1,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000001.csv.gz",
+      "sha256": "515a9dc414582953a0ba4cb28d664776f13c00cf40b091beefe1c4d5ee3562c8"
+    },
+    {
+      "trace_id": 2,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000002.csv.gz",
+      "sha256": "a7f4155d50171232590c3e86fc220ba18817e01ec6314e1f0baca7942a6e2ea6"
+    },
+    {
+      "trace_id": 3,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000003.csv.gz",
+      "sha256": "f7569001d31ee19928ed7e4b014c007c17893ed8aee57665ec0afbee464cc58c"
+    },
+    {
+      "trace_id": 4,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000004.csv.gz",
+      "sha256": "f39388b2cc6d72c43b160270389ca8357504159380fb1b9ea763f7a9a871f15a"
+    },
+    {
+      "trace_id": 5,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000005.csv.gz",
+      "sha256": "0afa96812f426fa36822cd09b64d2ddcbabea5d73a6abf6f7de726a2dc5efdde"
+    },
+    {
+      "trace_id": 6,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000006.csv.gz",
+      "sha256": "378da1151368bfd58ddc32f21f161732c500aeef95b0504e3eb8b9454e66a0ac"
+    },
+    {
+      "trace_id": 7,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000007.csv.gz",
+      "sha256": "0c8280f0187f5d2e77ae7db992f81e50af4d8160b839e7549fd03dda68d76fce"
+    },
+    {
+      "trace_id": 8,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000008.csv.gz",
+      "sha256": "087981e5435d57e1d59a1d6b9ff6cf1cdadd1fadf1067e4688c2c43557602b04"
+    },
+    {
+      "trace_id": 9,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000009.csv.gz",
+      "sha256": "cb320b04e5794a94fb8e6e197d41447a7a3a922a4930c83ff405276f004e77e5"
+    },
+    {
+      "trace_id": 10,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000010.csv.gz",
+      "sha256": "308e133507d5987d427e7d6effa8f658a84416d4e58ee33cca2295d131ff07fb"
+    },
+    {
+      "trace_id": 11,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000011.csv.gz",
+      "sha256": "80e748f38b8969b2730df3e833824adf40f9e3fe95d5ba6d4690171b04241976"
+    },
+    {
+      "trace_id": 12,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000012.csv.gz",
+      "sha256": "d2d183a1be752840a2546c903b47a6de69bbd626396c462fb8d13adbe18446c8"
+    },
+    {
+      "trace_id": 13,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000013.csv.gz",
+      "sha256": "7ac1b33e9b19cc4e64bba56d16a9b681a1f34d31eb6668f36e26b87912360467"
+    },
+    {
+      "trace_id": 14,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000014.csv.gz",
+      "sha256": "284ace0b54df1d0b4a7508f54c6437b57ca861d82d8e15377f0ca3e9ba94018e"
+    },
+    {
+      "trace_id": 15,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000015.csv.gz",
+      "sha256": "ce2731554128b12d919f7000bbc28234fb376f931d4b6c68d21fa25c5deac970"
+    },
+    {
+      "trace_id": 16,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000016.csv.gz",
+      "sha256": "22e06ce05cc99aaa2d76d8525138f9e566a082f46409fd9f363de175ad558d2c"
+    },
+    {
+      "trace_id": 17,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000017.csv.gz",
+      "sha256": "e126b0b75758802b4d69e86e5f3c87b43fa204a76f7e7662e819197ce3d8ae6c"
+    },
+    {
+      "trace_id": 18,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000018.csv.gz",
+      "sha256": "d1ff8526e2412deddf808c02fb1adf804088f717c79e93236b5554eb23721fb3"
+    },
+    {
+      "trace_id": 19,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000019.csv.gz",
+      "sha256": "1972e3b46461da3e47cf8b4b2c57529793539ad4d58f71daa34ed9865f26715d"
+    },
+    {
+      "trace_id": 20,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000020.csv.gz",
+      "sha256": "44f9dbb46256b7c567bb0f9e747800daf98a55ca45c5eecd2d2227c4b5726588"
+    },
+    {
+      "trace_id": 21,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000021.csv.gz",
+      "sha256": "9e296638777a1f11b1e2b04dc98eb199bdf1768aedf495d320c2beff273ed34d"
+    },
+    {
+      "trace_id": 22,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000022.csv.gz",
+      "sha256": "9f0a98632f27bd24420cbd60823441c287e6a0aa6afe1df21d70084fd5e2a297"
+    },
+    {
+      "trace_id": 23,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000023.csv.gz",
+      "sha256": "2f6f941f3eabe41ff0f6daa8c581d0be7eeb61b71e56d63d638cf99031970824"
+    },
+    {
+      "trace_id": 24,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000024.csv.gz",
+      "sha256": "7bd75acabd7b9084e1e15bbd8bc8d91c9bad7eb1601401307b95352ad4d95e7e"
+    },
+    {
+      "trace_id": 25,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000025.csv.gz",
+      "sha256": "76b8546168cc36a6262094bd81ee0989bf906bdd1fb2ed171e5137951d57c660"
+    },
+    {
+      "trace_id": 26,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000026.csv.gz",
+      "sha256": "a08df80a06666b07a2a0c8259b1f4a6f9e684e09ac711c56634f84dcd20de841"
+    },
+    {
+      "trace_id": 27,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000027.csv.gz",
+      "sha256": "0be2e7080c3e9027a599f7e81cce4c4f04447c2f91ae9aed493cd2beb7bccb5c"
+    },
+    {
+      "trace_id": 28,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000028.csv.gz",
+      "sha256": "350081e873c884a5f835f79dd6a446343c40541507d2f6dedb0d01298838c9a6"
+    },
+    {
+      "trace_id": 29,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000029.csv.gz",
+      "sha256": "e0bb61bc4d04102cc5fd80cf80c0515aba6bab73602140806813c904bc76152f"
+    },
+    {
+      "trace_id": 30,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000030.csv.gz",
+      "sha256": "1e73c087b4bdca9e3e2508a99d1b4afe14958cd43c735a565a055aa67bdc6e18"
+    },
+    {
+      "trace_id": 31,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000031.csv.gz",
+      "sha256": "70691a6d6a2e434293914745cf528b2e6b3fb0f8868919da248c8975fdfe469b"
+    },
+    {
+      "trace_id": 32,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000032.csv.gz",
+      "sha256": "ef1629beed0ab72e28fa414b5d721583cc01fd8721e80687eeee12ebe5f0f244"
+    },
+    {
+      "trace_id": 33,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000033.csv.gz",
+      "sha256": "77b3a6fe7bf1a801b6c7ed90b3cff17eabe2260e8f4346ff7fa67645c038096a"
+    },
+    {
+      "trace_id": 34,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000034.csv.gz",
+      "sha256": "5d0782d0fb913441606a05ea6ed332ca2d7bd478c3507685dc2a592f3f6cbe10"
+    },
+    {
+      "trace_id": 35,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000035.csv.gz",
+      "sha256": "370180da2f1498ecbd26b4f4bdb799ed0736af1c0ae822a74766cda2b97bcfa3"
+    },
+    {
+      "trace_id": 36,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000036.csv.gz",
+      "sha256": "7202c4c43a661c42e1eec9a149be1d765f961106b3bc7129763c2d3d75476c60"
+    },
+    {
+      "trace_id": 37,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000037.csv.gz",
+      "sha256": "c43eb8c25170d490b875e180aac819719e5948744d4b07d07433fb0ddd38520f"
+    },
+    {
+      "trace_id": 38,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000038.csv.gz",
+      "sha256": "12b78fcd216d0ee4080c6f63f75e0e7683c060548a61592cdb02609c5f4806cb"
+    },
+    {
+      "trace_id": 39,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000039.csv.gz",
+      "sha256": "70b90573537af519f4e075f279208fef6d1766ed3d2d521b3d0d40ca8fbcb577"
+    },
+    {
+      "trace_id": 40,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000040.csv.gz",
+      "sha256": "79cbac66ad6894028e9dbf0595a7ce2eeac6b5102481adcab5d85a2c39cfebc7"
+    },
+    {
+      "trace_id": 41,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000041.csv.gz",
+      "sha256": "1f158f882dd2144a2412d47e066248b8477aa222dc59f81150a8a022dd8f8da0"
+    },
+    {
+      "trace_id": 42,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000042.csv.gz",
+      "sha256": "32c3d3159732ccfcebdc96eab65bc3e549ba99770f25174a78ba5e3937f1bb3a"
+    },
+    {
+      "trace_id": 43,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000043.csv.gz",
+      "sha256": "3c2e72e5aee4e51ef871178000bd8aba987a7b9c6811925178fa10fa2f1a259d"
+    },
+    {
+      "trace_id": 44,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000044.csv.gz",
+      "sha256": "aab304a73d4dcc6252143f20170408e8b9e4f808be3ea46f9168d0dbf17acb2d"
+    },
+    {
+      "trace_id": 45,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000045.csv.gz",
+      "sha256": "c9e689482dd480317f6c7c344c97a99bcd6ba7a8b1b9a19adcd744f96e541cf4"
+    },
+    {
+      "trace_id": 46,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000046.csv.gz",
+      "sha256": "bdd228b68f8199faf879bf4c08ccb3a930095731ef01f725d97f3e20abf96063"
+    },
+    {
+      "trace_id": 47,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000047.csv.gz",
+      "sha256": "ecef51fc593613ca39ce18672454c2bb172a35d4a94bc143324b3a5feb8dc883"
+    },
+    {
+      "trace_id": 48,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000048.csv.gz",
+      "sha256": "5c0f6ea67d7e96be1088c78438d628838d96b3d255ff0b9009a9fe4668b34032"
+    },
+    {
+      "trace_id": 49,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000049.csv.gz",
+      "sha256": "a2a96f58814a6406153cb66c0c60484bd54f55eaf409fb6c2dc0ddd4c09fed92"
+    },
+    {
+      "trace_id": 50,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000050.csv.gz",
+      "sha256": "8945bb755f7f342dd9deb7637904463e9fc8375ff310dfe91d73a6e80e554a33"
+    },
+    {
+      "trace_id": 51,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000051.csv.gz",
+      "sha256": "fcd359f37d2da094c4fb11dd0aedb7220c841fa297d95186c4bfc37394889071"
+    },
+    {
+      "trace_id": 52,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000052.csv.gz",
+      "sha256": "2c176fd66cbb2b00f691b76285cc44e38ddffcd4e68ea2257546c167f7e74947"
+    },
+    {
+      "trace_id": 53,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000053.csv.gz",
+      "sha256": "9c5837f65d0775b718f5b480877bac39f03a27b19ef76c1984d45e1c3aeacb90"
+    },
+    {
+      "trace_id": 54,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000054.csv.gz",
+      "sha256": "c057303f3d707543701b209d23ffc9ee2169e227a4f9b29a726d832efdbf25a7"
+    },
+    {
+      "trace_id": 55,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000055.csv.gz",
+      "sha256": "9fe5a593ff1989aea7b890fe3df4eb1eb716acae4b905ae385120b0dd28d8667"
+    },
+    {
+      "trace_id": 56,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000056.csv.gz",
+      "sha256": "0035f9910a0540fca6028403a7b75c1500a795397268316f1b895c375ef75bb7"
+    },
+    {
+      "trace_id": 57,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000057.csv.gz",
+      "sha256": "2186eceb04876d5d77f184fd1c070a30be90e2fdb7f80d2c641b005c05acb277"
+    },
+    {
+      "trace_id": 58,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000058.csv.gz",
+      "sha256": "01ee7b58b1df55b77c28d92d40920717ddd2fd005238c2c2e3b9722579b59010"
+    },
+    {
+      "trace_id": 59,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000059.csv.gz",
+      "sha256": "a2a82cd73032fa3116dbe34287443254dd9240d4eb2c3fe15f15a72295224798"
+    },
+    {
+      "trace_id": 60,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000060.csv.gz",
+      "sha256": "973732c0f8d57fd50fda18166e7f7a848598da37b911500a01139c139611b403"
+    },
+    {
+      "trace_id": 61,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000061.csv.gz",
+      "sha256": "1369eacb24326f99da0d593b88356ed02c3bd78454dd53d922cd3ef743bb1dd6"
+    },
+    {
+      "trace_id": 62,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000062.csv.gz",
+      "sha256": "9e5a13678068c9bbfc89838acedbb26aa56f27c7830c09e8e5968e4576c2bc8a"
+    },
+    {
+      "trace_id": 63,
+      "split": "test",
+      "attempt": 0,
+      "samples": 2001,
+      "path": "test/trace_000063.csv.gz",
+      "sha256": "a4f641d327f8838426ae408eeb4afc69af406f78ea7b6645659d7df3c70010a1"
+    }
+  ],
+  "generation_source": {
+    "manifest_sha256": "f01aa5d089b2ebd42b4d6f36f7f57b3e9a1dcafe7a2b468439b333da0d4ef84d",
+    "asset_hashes": {
+      "benchmark.yaml": "1b0080574d907f8d7e36050f51face8d95c66a047910f5b83dd7299b81ef5c71",
+      "model.xml": "211c24a2022c62203bde5b5047607be19ccdaf92fd4b8dba5173e99984043d9b",
+      "metadata.yaml": "91b2ce5574dc748e2ad26606f984144b8c0e187f9599c09ffb2499344b1d5418"
+    }
+  },
+  "export": {
+    "csv_bytes_preserved": true,
+    "description": "System definitions are stored in systems; this manifest records the dataset files and their generation or source information."
+  },
+  "data_origin": "generated-from-sx",
+  "data_license": "MIT",
+  "time_unit": "unknown",
+  "sampling_period": 0.01,
+  "counts": {
+    "train": 256,
+    "test": 64
+  },
+  "samples_per_trace": 2001,
+  "variables": {
+    "states": [
+      "x1",
+      "x2",
+      "x3"
+    ],
+    "inputs": []
+  },
+  "system_hashes": {
+    "metadata.yaml": "aa97cd46448464747aaf258eae148a42876fe57c33c4ecb6eb00dbc32ac98c61",
+    "model.xml": "211c24a2022c62203bde5b5047607be19ccdaf92fd4b8dba5173e99984043d9b",
+    "generation.yaml": "8ec21a1ebeec2202ddaa1c511012400db30c02ad413cf06e32bb89fb8d0ec0cd"
+  }
+}

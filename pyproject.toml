@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "halbench"
+version = "0.1.0"
+description = "Benchmark systems, datasets and trace generation for hybrid automata learning"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {file = "LICENSE"}
+dependencies = ["pandas>=1.3", "PyYAML>=6"]
+
+[project.optional-dependencies]
+generate = ["numpy>=1.24", "scipy>=1.10"]
+
+[project.scripts]
+halbench-generate = "halbench_generator.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["halbench_loader*", "halbench_generator*"]

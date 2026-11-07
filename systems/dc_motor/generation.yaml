@@ -1,0 +1,94 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: dc_motor
+version: 1
+initial_origin: benchmark-extension
+states:
+- x1
+- x2
+- x2_d1
+- x2_d2
+- x2_d3
+outputs:
+- x1
+- x2
+inputs: {}
+initial:
+  components:
+  - mode: '1'
+    draws:
+      x1:
+        uniform:
+        - 0.0
+        - 5.0
+      x2:
+        uniform:
+        - 0.0
+        - 2.5
+      x2_d1:
+        uniform:
+        - -1.25
+        - 1.25
+      x2_d2:
+        uniform:
+        - -1.25
+        - 1.25
+      x2_d3:
+        uniform:
+        - -1.25
+        - 1.25
+    state:
+      x1: x1
+      x2: x2
+      x2_d1: x2_d1
+      x2_d2: x2_d2
+      x2_d3: x2_d3
+  - mode: '2'
+    draws:
+      x1:
+        uniform:
+        - 0.0
+        - 5.0
+      x2:
+        uniform:
+        - 0.0
+        - 2.5
+      x2_d1:
+        uniform:
+        - -1.25
+        - 1.25
+      x2_d2:
+        uniform:
+        - -1.25
+        - 1.25
+      x2_d3:
+        uniform:
+        - -1.25
+        - 1.25
+    state:
+      x1: x1
+      x2: x2
+      x2_d1: x2_d1
+      x2_d2: x2_d2
+      x2_d3: x2_d3
+defaults:
+  duration: 20.0
+  sample_period: 0.01
+  max_step: 0.2
+state_scales:
+- 5
+- 2.5
+- 1.25
+- 1.25
+- 1.25
+measurement_scales:
+- 5
+- 2.5
+process:
+  channels:
+  - x2_d3
+  scales:
+  - 0.0625
+  interval: 0.2
+observation_events: {}
+acceptance: null
