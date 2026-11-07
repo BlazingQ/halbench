@@ -7,16 +7,32 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 
+# Presentation order follows the survey's Table 3.
+SYSTEM_ORDER = (
+    'buck_converter', 'simple_heating_system', 'excitable_cell', 'complex_tank',
+    'switched_lorenz', 'oscillator', 'oscillator_2', 'underdamped_system',
+    'dc_motor', 'jumper_dog', 'lotkavolterra', 'spacecraft', 'biological_system',
+    'ecg_signals', 'bouncing_ball', 'simple_non_polynomial', 'heating_with_input',
+    'multi_room_heating', 'two_tank_system', 'cooperative_vehicles', 'aircraft',
+    'engine_timing_model', 'f1tenth_car', 'controlled_underdamped', 'duffing_oscillator',
+)
+
+
+def dynamics_label(metadata):
+    label = metadata['dynamics'].capitalize()
+    order = metadata['dynamics_order']
+    return f'{label} ({order})' if order not in ('1st', 'unknown') else label
+
 # Catalog columns: display name and metadata accessor.
 COLUMNS = [
     ("Name", lambda m: m["name"]),
     ("System type", lambda m: {"state-only": "Closed", "input-output": "Open"}[m["data_format"]]),
-    ("System origin", lambda m: m["type"]),
-    ("#Modes", lambda m: m["num_modes"]),
+    ("System origin", lambda m: m["type"].capitalize() + ('*' if m.get('origin_detail') == 'industrial-simulator' else '')),
+    ("#Modes", lambda m: '---' if m["num_modes"] == -1 else m["num_modes"]),
     ("Dim (I+O)", lambda m: f"{m['dim']['input']} + {m['dim']['output']}"),
-    ("Dynamics (Order)", lambda m: f"{m['dynamics']} ({m['dynamics_order']})"),
-    ("Guard", lambda m: m["guard"]),
-    ("Reset", lambda m: m["reset"]),
+    ("Dynamics (Order)", dynamics_label),
+    ("Guard", lambda m: 'Fixed Time' if m['guard'] == 'fixed-time' else m['guard'].capitalize()),
+    ("Reset", lambda m: m["reset"].capitalize()),
     ("Source", lambda m: m["source"]["work"]),
     ("Traces (train/test)", lambda m: f"{m['traces']['train']}/{m['traces']['test']}"),
 ]
@@ -33,7 +49,10 @@ def load_metadata():
         metadata['traces'] = {split: sum(r['split'] == split for r in manifest['traces'])
                               for split in ('train', 'test')}
         rows.append(metadata)
-    return rows
+    by_id = {m['system_id']: m for m in rows}
+    if set(by_id) != set(SYSTEM_ORDER):
+        raise ValueError('System definitions and catalog order differ')
+    return [by_id[sid] for sid in SYSTEM_ORDER]
 
 
 def write_catalog_csv(rows):

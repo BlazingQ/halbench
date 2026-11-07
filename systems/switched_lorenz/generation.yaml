@@ -1,0 +1,57 @@
+# Initial conditions, inputs, sampling and noise settings. Dynamics are in model.xml.
+schema: halbench-generation-v1
+system_id: switched_lorenz
+version: 1
+initial_origin: benchmark-extension
+states: &id001
+- x
+- y
+- z
+outputs: *id001
+inputs: {}
+initial:
+  components:
+  - mode: '0'
+    draws:
+      x:
+        uniform:
+        - -13.552859476877932
+        - 13.552859476877932
+      y:
+        uniform:
+        - -13.552859476877932
+        - 13.552859476877932
+      z:
+        uniform:
+        - 27.0
+        - 45.92
+    state:
+      x: x
+      y: y
+      z: z
+    mode_by:
+      predicate: x+y >= 0
+      'true': '0'
+      'false': '1'
+defaults:
+  duration: 15.0
+  sample_period: 0.01
+  max_step: 0.15
+state_scales:
+- 30
+- 30
+- 50
+measurement_scales:
+- 30
+- 30
+- 50
+process:
+  channels: *id001
+  scales:
+  - 2.0
+  - 2.0
+  - 3.3333333333333335
+  interval: 0.15
+observation_events: {}
+acceptance: null
+random_namespace: [1356107193, 1782216805, 1512645297, 3325898453]

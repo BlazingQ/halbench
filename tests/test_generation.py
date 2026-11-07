@@ -147,9 +147,9 @@ class BatchTests(unittest.TestCase):
                     loader.load('example')
 
     def test_noise_streams_sampling_and_latent_independence(self):
-        a,ra,_=generate_trace('two_tank',seed=19,duration=2,sample_period=.02,process_noise=.1)
-        b,rb,_=generate_trace('two_tank',seed=19,duration=2,sample_period=.02,process_noise=.1,measurement_noise=.1)
-        c,rc,_=generate_trace('two_tank',seed=19,duration=2,sample_period=.01,process_noise=.1)
+        a,ra,_=generate_trace('two_tank_system',seed=19,duration=2,sample_period=.02,process_noise=.1)
+        b,rb,_=generate_trace('two_tank_system',seed=19,duration=2,sample_period=.02,process_noise=.1,measurement_noise=.1)
+        c,rc,_=generate_trace('two_tank_system',seed=19,duration=2,sample_period=.01,process_noise=.1)
         np.testing.assert_array_equal(ra.states,rb.states)
         np.testing.assert_allclose(ra.states,rc.states[::2],rtol=0,atol=1e-13)
         np.testing.assert_array_equal(a[:,-1],b[:,-1])
@@ -157,7 +157,7 @@ class BatchTests(unittest.TestCase):
 
     def test_serial_parallel_and_train_count_independence(self):
         with tempfile.TemporaryDirectory() as tmp:
-            args=dict(system_id='two_tank',n_train=1,n_test=1,duration=.5,sample_period=.1,seed=71)
+            args=dict(system_id='two_tank_system',n_train=1,n_test=1,duration=.5,sample_period=.1,seed=71)
             first=generate_dataset(**args,workers=1,output_dir=Path(tmp)/'a')
             other=generate_dataset(**{**args,'n_train':2},workers=2,output_dir=Path(tmp)/'b')
             for split in ['train','test']:
@@ -177,7 +177,7 @@ class BatchTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             p=Path(tmp)/'out'
             with self.assertRaises(ValueError):
-                generate_dataset('two_tank',n_train=1,duration=-1,output_dir=p)
+                generate_dataset('two_tank_system',n_train=1,duration=-1,output_dir=p)
             self.assertFalse(p.exists())
 
     def test_failed_batch_preserves_diagnostics_and_is_not_loadable(self):

@@ -7,7 +7,7 @@ def main():
     parser = argparse.ArgumentParser(
         description='Generate a dataset for a synthetic benchmark or a collection for all synthetic systems.',
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog='Example:\n  halbench-generate two_tank --n-train 8 --n-test 2 --seed 42 '
+        epilog='Example:\n  halbench-generate two_tank_system --n-train 8 --n-test 2 --seed 42 '
                '--output-dir generated/tank_001\n\n'
                'Collection:\n  halbench-generate all --n-train 8 --n-test 2 --seed 42 '
                '--output-dir generated/collection_42\n\n'

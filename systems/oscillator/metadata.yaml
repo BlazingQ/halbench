@@ -1,23 +1,23 @@
 schema: halbench-dataset-v1
 system_id: oscillator
-name: Oscillator 2
+name: Oscillator
 source:
-  work: HybridLearner
-  repo_url: https://github.com/rajgurung777/HybridLearner
-  commit: 34bda59
-  artifact_path: examples/oscillator
-  license: GPL-3.0
-  platform: matlab_simulink
-  data_provided: true
+  work: Dainarx
+  repo_url: https://github.com/FICTION-ZJU/Dainarx
+  commit: 8a8f5dc
+  artifact_path: automata/non_linear/oscillator.json
+  license: unknown
+  platform: python
+  data_provided: false
 data_format: state-only
 type: synthetic
-num_modes: 4
+num_modes: 2
 dim:
   input: 0
   output: 2
-dynamics: affine
+dynamics: trigonometric
 dynamics_order: 1st
-guard: linear
+guard: trigonometric
 reset: 'no'
 variables:
   states:
@@ -26,4 +26,6 @@ variables:
   inputs: []
 time_unit: unknown
 model_description: sx
-notes: []
+notes:
+- cos(x1)-x2/10-0.7 >= 0 (1 -> 2), <= 0 (2 -> 1).
+- Trigonometric vector fields involving sine and cosine.

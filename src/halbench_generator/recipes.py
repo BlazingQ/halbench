@@ -18,7 +18,8 @@ def digest(path):
 
 
 def rng_for(seed, sid, split, trace_id, purpose, attempt=0):
-    sid_words = np.frombuffer(hashlib.sha256(sid.encode()).digest()[:16], dtype='<u4').tolist()
+    sid_words = (np.frombuffer(hashlib.sha256(sid.encode()).digest()[:16], dtype='<u4').tolist()
+                 if isinstance(sid, str) else list(sid))
     return np.random.Generator(np.random.PCG64(np.random.SeedSequence(
         [*sid_words, split, trace_id, purpose, attempt, seed])))
 
@@ -35,8 +36,13 @@ class Recipe:
             raise ValueError(f'{sid} is a real-world dataset; select a synthetic benchmark for trace generation')
         self.cfg = yaml.safe_load(self.path.read_text())
         c = self.cfg
-        if c['schema'] != 'halbench-generation-v1' or c['system_id'] != sid or meta['type'] != 'synthetic':
+        if (c['schema'] != 'halbench-generation-v1' or c['system_id'] != sid
+                or meta['system_id'] != sid or meta['type'] != 'synthetic'):
             raise ValueError('Unsupported task schema/system')
+        namespace = c.get('random_namespace')
+        if namespace is not None and (not isinstance(namespace, list) or len(namespace) != 4
+                or any(type(v) is not int or not 0 <= v < 2**32 for v in namespace)):
+            raise ValueError('random_namespace must contain four unsigned 32-bit integers')
         self.model = Model(self.path.with_name('model.xml'), c['states'], list(c['inputs']))
         self.outputs = meta['variables']['states']
         self.events = meta['variables'].get('events', [])

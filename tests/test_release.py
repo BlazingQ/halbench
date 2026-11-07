@@ -4,6 +4,7 @@ import gzip
 import hashlib
 import json
 import os
+import re
 import shutil
 from pathlib import Path
 import subprocess
@@ -35,6 +36,10 @@ class ReleaseTests(unittest.TestCase):
                 system = systems_root()/sid
                 meta = yaml.safe_load((system/'metadata.yaml').read_text())
                 manifest = json.loads((folder/'manifest.json').read_text())
+                self.assertEqual(sid, re.sub('[^a-z0-9]+', '_', meta['name'].lower()).strip('_'))
+                self.assertEqual(meta['system_id'], sid)
+                self.assertEqual(manifest['system_id'], sid)
+                self.assertEqual(catalog[sid]['Name'], meta['name'])
                 for field in ('paper_citekey', 'traces', 'duration', 'sampling_period',
                               'initial_origin', 'data_origin', 'data_license',
                               'dynamics_detail', 'guard_detail', 'reset_detail'):
@@ -47,6 +52,9 @@ class ReleaseTests(unittest.TestCase):
                 if meta['type'] == 'synthetic':
                     synthetic += 1
                     recipe = Recipe(sid)
+                    self.assertEqual(recipe.cfg['system_id'], sid)
+                    self.assertEqual(manifest['recipe']['system_id'], sid)
+                    self.assertEqual(manifest['recipe']['random_namespace'], recipe.cfg['random_namespace'])
                     self.assertEqual(len(recipe.model.modes), meta['num_modes'])
                     self.assertEqual((manifest['counts']['train'], manifest['counts']['test']), (256, 64))
                     self.assertEqual(manifest['request']['process_noise'], 0)
@@ -96,7 +104,7 @@ class ReleaseTests(unittest.TestCase):
 
     def test_generated_dataset_is_portable_and_has_the_bundled_layout(self):
         with tempfile.TemporaryDirectory() as temp:
-            output = generate_dataset('two_tank', n_train=1, n_test=1, duration=.5,
+            output = generate_dataset('two_tank_system', n_train=1, n_test=1, duration=.5,
                                       seed=9, workers=1, output_dir=Path(temp)/'tank')
             self.assertEqual({p.name for p in output.iterdir()}, {'manifest.json', 'train', 'test'})
             original = loader.load(path=output, split='test')
@@ -111,7 +119,7 @@ class ReleaseTests(unittest.TestCase):
         source = systems_root()
         with tempfile.TemporaryDirectory() as temp:
             temp = Path(temp)
-            for sid, duration in [('two_tank', .5), ('simple_heating_system', .7)]:
+            for sid, duration in [('two_tank_system', .5), ('simple_heating_system', .7)]:
                 folder = temp/'catalog'/sid
                 folder.mkdir(parents=True)
                 for name in ('metadata.yaml', 'generation.yaml', 'model.xml'):
@@ -122,8 +130,8 @@ class ReleaseTests(unittest.TestCase):
             with patch.dict(os.environ, {'HALBENCH_SYSTEMS': str(temp/'catalog')}):
                 output = generate_collection(n_train=1, n_test=1, seed=19, workers=1,
                                              output_dir=temp/'all')
-                self.assertEqual({p.name for p in output.iterdir()}, {'two_tank', 'simple_heating_system'})
-                for sid, duration in [('two_tank', .5), ('simple_heating_system', .7)]:
+                self.assertEqual({p.name for p in output.iterdir()}, {'two_tank_system', 'simple_heating_system'})
+                for sid, duration in [('two_tank_system', .5), ('simple_heating_system', .7)]:
                     manifest = json.loads((output/sid/'manifest.json').read_text())
                     self.assertEqual(manifest['request']['duration'], duration)
                     self.assertEqual(manifest['counts'], {'train': 1, 'test': 1})
@@ -154,7 +162,7 @@ class ReleaseTests(unittest.TestCase):
                 self.assertEqual(datasets_root(), Path(temp).resolve())
                 self.assertEqual(loader.list_datasets(), [])
                 with self.assertRaises(FileNotFoundError):
-                    Recipe('two_tank')
+                    Recipe('two_tank_system')
 
     def test_cli_help_and_observation_only_error(self):
         for flag in ['-h', '--help']:

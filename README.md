@@ -51,14 +51,14 @@ the values used for that batch.
 
 ## Read data
 
-Read the bundled Two-tank System benchmark (`two_tank`) by system ID:
+Read the bundled Two-tank System benchmark (`two_tank_system`) by system ID:
 
 ~~~python
 import halbench_loader as hb
 
 systems = hb.list_datasets()
-train = hb.load("two_tank", split="train")
-test = hb.load("two_tank", split="test")
+train = hb.load("two_tank_system", split="train")
+test = hb.load("two_tank_system", split="test")
 first_trace = next(iter(train.values()))  # pandas DataFrame
 ~~~
 
@@ -68,7 +68,7 @@ For your own data, pass its directory explicitly:
 ~~~python
 train = hb.load(path="generated/tank_42", split="train")
 test = hb.load(path="generated/tank_42", split="test")
-collection_test = hb.load(path="generated/collection_43/two_tank", split="test")
+collection_test = hb.load(path="generated/collection_43/two_tank_system", split="test")
 ~~~
 
 The generation commands below create these example paths. Relative paths are
@@ -90,10 +90,10 @@ copied to another directory.
 ## Generate data
 
 Generate two training trajectories and one test trajectory for the Two-tank
-System benchmark (`two_tank`):
+System benchmark (`two_tank_system`):
 
 ~~~sh
-halbench-generate two_tank --n-train 2 --n-test 1 --seed 42 --output-dir generated/tank_42
+halbench-generate two_tank_system --n-train 2 --n-test 1 --seed 42 --output-dir generated/tank_42
 ~~~
 
 Generate one training and one test trajectory for each of the 22 synthetic systems
@@ -113,7 +113,7 @@ generated/tank_42/
 
 generated/collection_43/
   aircraft/{manifest.json,train/,test/}
-  two_tank/{manifest.json,train/,test/}
+  two_tank_system/{manifest.json,train/,test/}
   ...
 ~~~
 
@@ -148,44 +148,48 @@ the fixed scale in `generation.yaml`.
 
 Select a system name to view its metadata and notes. Closed denotes state-only
 systems; Open denotes systems with external inputs. Dim (I+O) gives the input and
-output dimensions. [catalog.csv](catalog.csv) provides the same catalog as a CSV.
+output dimensions. System IDs use the Table 3 names in lowercase, with spaces
+and hyphens replaced by underscores. [catalog.csv](catalog.csv) provides the same
+catalog as a CSV.
 
 <!-- CATALOG:BEGIN -->
 | Name | System type | System origin | #Modes | Dim (I+O) | Dynamics (Order) | Guard | Reset | Source | Traces (train/test) |
 |---|---|---|---|---|---|---|---|---|---|
-| [Aircraft](systems/aircraft/metadata.yaml) | Open | synthetic | 1 | 2 + 3 | nonlinear (1st) | none | no | HSCC25 | 256/64 |
-| [Biological System](systems/biological_system/metadata.yaml) | Closed | synthetic | 2 | 0 + 9 | polynomial (1st) | linear | no | Dainarx | 256/64 |
-| [Bouncing Ball](systems/bouncing_ball/metadata.yaml) | Closed | synthetic | 1 | 0 + 2 | affine (1st) | linear | yes | HSCC25 | 256/64 |
-| [Buck Converter](systems/buck_converter/metadata.yaml) | Closed | synthetic | 3 | 0 + 2 | affine (1st) | linear | no | FaMoS | 256/64 |
-| [Complex Tank](systems/complex_tank/metadata.yaml) | Closed | synthetic | 8 | 0 + 3 | affine (1st) | linear | no | FaMoS | 256/64 |
-| [Controlled Underdamped](systems/controlled_underdamped_system/metadata.yaml) | Open | synthetic | 4 | 1 + 2 | affine (2nd) | linear | yes | Dainarx | 256/64 |
-| [Cooperative Vehicles](systems/cooperative_vehicles/metadata.yaml) | Open | synthetic | 2 | 1 + 9 | linear (1st) | fixed-time | no | hautlearn | 256/64 |
-| [DC Motor](systems/dc_motor/metadata.yaml) | Closed | synthetic | 2 | 0 + 2 | affine (4th) | linear | no | Dainarx | 256/64 |
-| [Duffing Oscillator](systems/duffing_oscillator/metadata.yaml) | Open | synthetic | 2 | 1 + 1 | polynomial (2nd) | nonlinear | yes | Dainarx | 256/64 |
-| [ECG Signals](systems/ecg_signals/metadata.yaml) | Closed | real-world | -1 | 0 + 1 | nonlinear (unknown) | implicit | no | HySynth | 3/0 |
-| [Engine Timing Model](systems/engine_timing/metadata.yaml) | Open | real-world | -1 | 2 + 1 | nonlinear (unknown) | implicit | no | HybridLearner | 64/40 |
-| [Excitable cell](systems/excitable_cell/metadata.yaml) | Closed | synthetic | 4 | 0 + 1 | constant (1st) | constant | no | HybridLearner | 256/64 |
-| [F1tenth Car](systems/f1tenth_car/metadata.yaml) | Open | real-world | -1 | 2 + 4 | nonlinear (unknown) | implicit | no | HSCC25 | 36/5 |
-| [Heating with Input](systems/heating_system_with_input/metadata.yaml) | Open | synthetic | 2 | 1 + 1 | affine (1st) | linear | no | FaMoS | 256/64 |
-| [Jumper Dog](systems/jumper_dog/metadata.yaml) | Closed | synthetic | 2 | 0 + 4 | affine (1st) | linear | no | Dainarx | 256/64 |
-| [LotkaVolterra](systems/lotka_volterra/metadata.yaml) | Closed | synthetic | 2 | 0 + 2 | polynomial (1st) | nonlinear | no | Dainarx | 256/64 |
-| [Multi-room Heating](systems/multi_room_heating/metadata.yaml) | Open | synthetic | 6 | 1 + 3 | affine (1st) | linear | no | hautlearn | 256/64 |
-| [Oscillator 2](systems/oscillator/metadata.yaml) | Closed | synthetic | 4 | 0 + 2 | affine (1st) | linear | no | HybridLearner | 256/64 |
-| [Oscillator](systems/oscillator__dainarx/metadata.yaml) | Closed | synthetic | 2 | 0 + 2 | nonlinear (1st) | nonlinear | no | Dainarx | 256/64 |
-| [Simple heating system](systems/simple_heating_system/metadata.yaml) | Closed | synthetic | 2 | 0 + 1 | affine (1st) | constant | no | FaMoS | 256/64 |
-| [Simple Non-Polynomial](systems/simple_non_polynomial/metadata.yaml) | Closed | synthetic | 2 | 0 + 1 | nonlinear (1st) | linear | yes | Dainarx | 256/64 |
-| [Spacecraft](systems/spacecraft/metadata.yaml) | Closed | synthetic | 2 | 0 + 4 | nonlinear (1st) | nonlinear | no | Dainarx | 256/64 |
-| [Switched Lorenz](systems/switched_lorenz_attractor/metadata.yaml) | Closed | synthetic | 2 | 0 + 3 | polynomial (1st) | linear | no | InferDynamic | 256/64 |
-| [Two-tank System](systems/two_tank/metadata.yaml) | Open | synthetic | 4 | 1 + 2 | affine (1st) | constant | no | HybridLearner | 256/64 |
-| [Underdamped System](systems/underdamped_system/metadata.yaml) | Closed | synthetic | 2 | 0 + 2 | affine (2nd) | linear | no | Dainarx | 256/64 |
+| [Buck Converter](systems/buck_converter/metadata.yaml) | Closed | Synthetic | 3 | 0 + 2 | Affine | Linear | No | FaMoS | 256/64 |
+| [Simple heating system](systems/simple_heating_system/metadata.yaml) | Closed | Synthetic | 2 | 0 + 1 | Affine | Constant | No | FaMoS | 256/64 |
+| [Excitable cell](systems/excitable_cell/metadata.yaml) | Closed | Synthetic | 4 | 0 + 1 | Constant | Constant | No | HybridLearner | 256/64 |
+| [Complex Tank](systems/complex_tank/metadata.yaml) | Closed | Synthetic | 8 | 0 + 3 | Affine | Linear | No | FaMoS | 256/64 |
+| [Switched Lorenz](systems/switched_lorenz/metadata.yaml) | Closed | Synthetic | 2 | 0 + 3 | Polynomial | Linear | No | InferDynamic | 256/64 |
+| [Oscillator](systems/oscillator/metadata.yaml) | Closed | Synthetic | 2 | 0 + 2 | Trigonometric | Trigonometric | No | Dainarx | 256/64 |
+| [Oscillator 2](systems/oscillator_2/metadata.yaml) | Closed | Synthetic | 4 | 0 + 2 | Affine | Linear | No | HybridLearner | 256/64 |
+| [Underdamped System](systems/underdamped_system/metadata.yaml) | Closed | Synthetic | 2 | 0 + 2 | Affine (2nd) | Linear | No | Dainarx | 256/64 |
+| [DC Motor](systems/dc_motor/metadata.yaml) | Closed | Synthetic | 2 | 0 + 2 | Affine (4th) | Linear | No | Dainarx | 256/64 |
+| [Jumper Dog](systems/jumper_dog/metadata.yaml) | Closed | Synthetic | 2 | 0 + 4 | Affine | Linear | No | Dainarx | 256/64 |
+| [LotkaVolterra](systems/lotkavolterra/metadata.yaml) | Closed | Synthetic | 2 | 0 + 2 | Polynomial | Nonlinear | No | Dainarx | 256/64 |
+| [Spacecraft](systems/spacecraft/metadata.yaml) | Closed | Synthetic | 2 | 0 + 4 | Nonlinear | Nonlinear | No | Dainarx | 256/64 |
+| [Biological System](systems/biological_system/metadata.yaml) | Closed | Synthetic | 2 | 0 + 9 | Polynomial | Linear | No | Dainarx | 256/64 |
+| [ECG Signals](systems/ecg_signals/metadata.yaml) | Closed | Real-world | --- | 0 + 1 | Nonlinear | Implicit | No | HySynth | 3/0 |
+| [Bouncing Ball](systems/bouncing_ball/metadata.yaml) | Closed | Synthetic | 1 | 0 + 2 | Affine | Linear | Yes | HSCC25 | 256/64 |
+| [Simple Non-Polynomial](systems/simple_non_polynomial/metadata.yaml) | Closed | Synthetic | 2 | 0 + 1 | Nonlinear | Linear | Yes | Dainarx | 256/64 |
+| [Heating with Input](systems/heating_with_input/metadata.yaml) | Open | Synthetic | 2 | 1 + 1 | Affine | Linear | No | FaMoS | 256/64 |
+| [Multi-room Heating](systems/multi_room_heating/metadata.yaml) | Open | Synthetic | 6 | 1 + 3 | Affine | Linear | No | hautlearn | 256/64 |
+| [Two-tank System](systems/two_tank_system/metadata.yaml) | Open | Synthetic | 4 | 1 + 2 | Affine | Constant | No | HybridLearner | 256/64 |
+| [Cooperative Vehicles](systems/cooperative_vehicles/metadata.yaml) | Open | Synthetic | 2 | 1 + 9 | Linear | Fixed Time | No | hautlearn | 256/64 |
+| [Aircraft](systems/aircraft/metadata.yaml) | Open | Synthetic | 1 | 2 + 3 | Nonlinear | None | No | HSCC25 | 256/64 |
+| [Engine Timing Model](systems/engine_timing_model/metadata.yaml) | Open | Real-world* | --- | 2 + 1 | Nonlinear | Implicit | No | HybridLearner | 64/40 |
+| [F1tenth Car](systems/f1tenth_car/metadata.yaml) | Open | Real-world | --- | 2 + 4 | Nonlinear | Implicit | No | HSCC25 | 36/5 |
+| [Controlled Underdamped](systems/controlled_underdamped/metadata.yaml) | Open | Synthetic | 4 | 1 + 2 | Affine (2nd) | Linear | Yes | Dainarx | 256/64 |
+| [Duffing Oscillator](systems/duffing_oscillator/metadata.yaml) | Open | Synthetic | 2 | 1 + 1 | Polynomial (2nd) | Nonlinear | Yes | Dainarx | 256/64 |
 <!-- CATALOG:END -->
+
+*Real-world\* denotes data generated by a high-fidelity industrial simulator.*
 
 ## License and sources
 
 Project contributions and generated datasets use the [MIT License](LICENSE).
 The ECG Signals dataset retains HySynth's [MIT License](datasets/ecg_signals/LICENSE),
 the Engine Timing Model dataset retains HybridLearner's
-[GNU GPL version 3](datasets/engine_timing/LICENSE), and the F1tenth Car dataset
+[GNU GPL version 3](datasets/engine_timing_model/LICENSE), and the F1tenth Car dataset
 uses [CC0-1.0](datasets/f1tenth_car/LICENSE).
 System metadata identify the sources; dataset manifests record the applicable
 data license and, for converted source CSV files, their source paths and format changes.

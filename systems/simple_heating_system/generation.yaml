@@ -40,3 +40,4 @@ process:
   interval: 0.2
 observation_events: {}
 acceptance: null
+random_namespace: [3378426480, 4041824259, 4192118476, 620525976]

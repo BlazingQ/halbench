@@ -86,7 +86,7 @@ def _load(folder, split, expected=None):
 def load(system_id=None, split='train', *, path=None):
     """Load a bundled system by ID or a dataset at an explicit path.
 
-    Examples: load('two_tank'); load(path='generated/tank_42').
+    Examples: load('two_tank_system'); load(path='generated/tank_42').
     The path identifies the directory containing manifest.json, train/ and test/.
     """
     if path is not None:

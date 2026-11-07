@@ -25,7 +25,8 @@ from .signals import Disturbance, make_inputs
 
 def candidate(recipe, seed, split, trace_id, attempt, duration, period,
               process_noise, settings=None):
-    sid, c = recipe.cfg['system_id'], recipe.cfg
+    c = recipe.cfg
+    sid = c.get('random_namespace', c['system_id'])
     mode, y, initial_inputs = recipe.sample_initial(rng_for(seed, sid, split, trace_id, 0, attempt))
     signals = make_inputs(c['inputs'], rng_for(seed, sid, split, trace_id, 1, attempt),
                           duration, initial_inputs)
@@ -86,7 +87,7 @@ def generate_trace(sid, *, trace_id=0, split=0, seed=0, duration=None, sample_pe
             continue
         observations = result.states[:, recipe.indices].copy()
         if measurement_noise:
-            observations += (rng_for(seed, sid, split, trace_id, 3, attempt).normal(size=observations.shape)
+            observations += (rng_for(seed, c.get('random_namespace', sid), split, trace_id, 3, attempt).normal(size=observations.shape)
                              * np.asarray(c['measurement_scales'])*measurement_noise)
         cols = [result.times[:, None], observations]
         if signals:

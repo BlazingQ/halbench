@@ -1,0 +1,28 @@
+schema: halbench-dataset-v1
+system_id: heating_with_input
+name: Heating with Input
+source:
+  work: FaMoS
+  repo_url: https://doi.org/10.5281/zenodo.10657936
+  artifact_path: ExampleSystems/InputHeatingSystem
+  license: MIT
+  platform: matlab
+  data_provided: true
+data_format: input-output
+type: synthetic
+num_modes: 2
+dim:
+  input: 1
+  output: 1
+dynamics: affine
+dynamics_order: 1st
+guard: linear
+reset: 'no'
+variables:
+  states:
+  - x1
+  inputs:
+  - u
+time_unit: unknown
+model_description: sx
+notes: []
