@@ -1,6 +1,6 @@
 schema: halbench-dataset-v1
 system_id: multi_room_heating
-name: Multi-room Heating
+name: Multi-room heating
 source:
   work: hautlearn
   repo_url: https://github.com/verivital/hautlearn

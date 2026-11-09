@@ -1,26 +1,26 @@
 system_id,Name,System type,System origin,#Modes,Dim (I+O),Dynamics (Order),Guard,Reset,Source,Traces (train/test)
-buck_converter,Buck Converter,Closed,Synthetic,3,0 + 2,Affine,Linear,No,FaMoS,256/64
+buck_converter,Buck converter,Closed,Synthetic,3,0 + 2,Affine,Linear,No,FaMoS,256/64
 simple_heating_system,Simple heating system,Closed,Synthetic,2,0 + 1,Affine,Constant,No,FaMoS,256/64
 excitable_cell,Excitable cell,Closed,Synthetic,4,0 + 1,Constant,Constant,No,HybridLearner,256/64
-complex_tank,Complex Tank,Closed,Synthetic,8,0 + 3,Affine,Linear,No,FaMoS,256/64
+complex_tank,Complex tank,Closed,Synthetic,8,0 + 3,Affine,Linear,No,FaMoS,256/64
 switched_lorenz,Switched Lorenz,Closed,Synthetic,2,0 + 3,Polynomial,Linear,No,InferDynamic,256/64
 oscillator,Oscillator,Closed,Synthetic,2,0 + 2,Trigonometric,Trigonometric,No,Dainarx,256/64
 oscillator_2,Oscillator 2,Closed,Synthetic,4,0 + 2,Affine,Linear,No,HybridLearner,256/64
-underdamped_system,Underdamped System,Closed,Synthetic,2,0 + 2,Affine (2nd),Linear,No,Dainarx,256/64
-dc_motor,DC Motor,Closed,Synthetic,2,0 + 2,Affine (4th),Linear,No,Dainarx,256/64
-jumper_dog,Jumper Dog,Closed,Synthetic,2,0 + 4,Affine,Linear,No,Dainarx,256/64
+underdamped_system,Underdamped system,Closed,Synthetic,2,0 + 2,Affine (2nd),Linear,No,Dainarx,256/64
+dc_motor,DC motor,Closed,Synthetic,2,0 + 2,Affine (4th),Linear,No,Dainarx,256/64
+jumper_dog,Jumper dog,Closed,Synthetic,2,0 + 4,Affine,Linear,No,Dainarx,256/64
 lotkavolterra,LotkaVolterra,Closed,Synthetic,2,0 + 2,Polynomial,Nonlinear,No,Dainarx,256/64
 spacecraft,Spacecraft,Closed,Synthetic,2,0 + 4,Nonlinear,Nonlinear,No,Dainarx,256/64
-biological_system,Biological System,Closed,Synthetic,2,0 + 9,Polynomial,Linear,No,Dainarx,256/64
-ecg_signals,ECG Signals,Closed,Real-world,---,0 + 1,Nonlinear,Implicit,No,HySynth,3/0
-bouncing_ball,Bouncing Ball,Closed,Synthetic,1,0 + 2,Affine,Linear,Yes,HSCC25,256/64
-simple_non_polynomial,Simple Non-Polynomial,Closed,Synthetic,2,0 + 1,Nonlinear,Linear,Yes,Dainarx,256/64
-heating_with_input,Heating with Input,Open,Synthetic,2,1 + 1,Affine,Linear,No,FaMoS,256/64
-multi_room_heating,Multi-room Heating,Open,Synthetic,6,1 + 3,Affine,Linear,No,hautlearn,256/64
-two_tank_system,Two-tank System,Open,Synthetic,4,1 + 2,Affine,Constant,No,HybridLearner,256/64
-cooperative_vehicles,Cooperative Vehicles,Open,Synthetic,2,1 + 9,Linear,Fixed Time,No,hautlearn,256/64
-aircraft,Aircraft,Open,Synthetic,1,2 + 3,Nonlinear,None,No,HSCC25,256/64
-engine_timing_model,Engine Timing Model,Open,Real-world*,---,2 + 1,Nonlinear,Implicit,No,HybridLearner,64/40
-f1tenth_car,F1tenth Car,Open,Real-world,---,2 + 4,Nonlinear,Implicit,No,HSCC25,36/5
-controlled_underdamped,Controlled Underdamped,Open,Synthetic,4,1 + 2,Affine (2nd),Linear,Yes,Dainarx,256/64
-duffing_oscillator,Duffing Oscillator,Open,Synthetic,2,1 + 1,Polynomial (2nd),Nonlinear,Yes,Dainarx,256/64
+biological_system,Biological system,Closed,Synthetic,2,0 + 9,Polynomial,Linear,No,Dainarx,256/64
+ecg_signals,ECG signals,Closed,Real-world,---,0 + 1,Nonlinear,Not specified,No,HySynth,3/0
+bouncing_ball,Bouncing ball,Closed,Synthetic,1,0 + 2,Affine,Linear,Yes,HSCC25,256/64
+simple_non_polynomial,Simple non-polynomial,Closed,Synthetic,2,0 + 1,Nonlinear,Linear,Yes,Dainarx,256/64
+heating_with_input,Heating with input,Open,Synthetic,2,1 + 1,Affine,Linear,No,FaMoS,256/64
+multi_room_heating,Multi-room heating,Open,Synthetic,6,1 + 3,Affine,Linear,No,hautlearn,256/64
+two_tank_system,Two-tank system,Open,Synthetic,4,1 + 2,Affine,Constant,No,HybridLearner,256/64
+cooperative_vehicles,Cooperative vehicles,Open,Synthetic,2,1 + 9,Linear,Fixed time,No,hautlearn,256/64
+aircraft,Aircraft,Open,Synthetic,1,2 + 3,Nonlinear,No guards,No,HSCC25,256/64
+engine_timing_model,Engine timing model,Open,Real-world*,---,2 + 1,Nonlinear,Not specified,No,HybridLearner,64/40
+f1tenth_car,F1tenth car,Open,Real-world,---,2 + 4,Nonlinear,Not specified,No,HSCC25,36/5
+controlled_underdamped,Controlled underdamped,Open,Synthetic,4,1 + 2,Affine (2nd),Linear,Yes,Dainarx,256/64
+duffing_oscillator,Duffing oscillator,Open,Synthetic,2,1 + 1,Polynomial (2nd),Nonlinear,Yes,Dainarx,256/64

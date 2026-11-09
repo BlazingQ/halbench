@@ -1,6 +1,6 @@
 schema: halbench-dataset-v1
 system_id: f1tenth_car
-name: F1tenth Car
+name: F1tenth car
 source:
   work: HSCC25
   repo_url: https://codeocean.com/capsule/1724008/tree/v1
@@ -17,7 +17,7 @@ dim:
   output: 4
 dynamics: nonlinear
 dynamics_order: unknown
-guard: implicit
+guard: not-specified
 reset: 'no'
 variables:
   states:

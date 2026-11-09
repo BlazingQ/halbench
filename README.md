@@ -51,7 +51,7 @@ the values used for that batch.
 
 ## Read data
 
-Read the bundled Two-tank System benchmark (`two_tank_system`) by system ID:
+Read the bundled Two-tank system benchmark (`two_tank_system`) by system ID:
 
 ~~~python
 import halbench_loader as hb
@@ -90,7 +90,7 @@ copied to another directory.
 ## Generate data
 
 Generate two training trajectories and one test trajectory for the Two-tank
-System benchmark (`two_tank_system`):
+system benchmark (`two_tank_system`):
 
 ~~~sh
 halbench-generate two_tank_system --n-train 2 --n-test 1 --seed 42 --output-dir generated/tank_42
@@ -155,41 +155,43 @@ catalog as a CSV.
 <!-- CATALOG:BEGIN -->
 | Name | System type | System origin | #Modes | Dim (I+O) | Dynamics (Order) | Guard | Reset | Source | Traces (train/test) |
 |---|---|---|---|---|---|---|---|---|---|
-| [Buck Converter](systems/buck_converter/metadata.yaml) | Closed | Synthetic | 3 | 0 + 2 | Affine | Linear | No | FaMoS | 256/64 |
+| [Buck converter](systems/buck_converter/metadata.yaml) | Closed | Synthetic | 3 | 0 + 2 | Affine | Linear | No | FaMoS | 256/64 |
 | [Simple heating system](systems/simple_heating_system/metadata.yaml) | Closed | Synthetic | 2 | 0 + 1 | Affine | Constant | No | FaMoS | 256/64 |
 | [Excitable cell](systems/excitable_cell/metadata.yaml) | Closed | Synthetic | 4 | 0 + 1 | Constant | Constant | No | HybridLearner | 256/64 |
-| [Complex Tank](systems/complex_tank/metadata.yaml) | Closed | Synthetic | 8 | 0 + 3 | Affine | Linear | No | FaMoS | 256/64 |
+| [Complex tank](systems/complex_tank/metadata.yaml) | Closed | Synthetic | 8 | 0 + 3 | Affine | Linear | No | FaMoS | 256/64 |
 | [Switched Lorenz](systems/switched_lorenz/metadata.yaml) | Closed | Synthetic | 2 | 0 + 3 | Polynomial | Linear | No | InferDynamic | 256/64 |
 | [Oscillator](systems/oscillator/metadata.yaml) | Closed | Synthetic | 2 | 0 + 2 | Trigonometric | Trigonometric | No | Dainarx | 256/64 |
 | [Oscillator 2](systems/oscillator_2/metadata.yaml) | Closed | Synthetic | 4 | 0 + 2 | Affine | Linear | No | HybridLearner | 256/64 |
-| [Underdamped System](systems/underdamped_system/metadata.yaml) | Closed | Synthetic | 2 | 0 + 2 | Affine (2nd) | Linear | No | Dainarx | 256/64 |
-| [DC Motor](systems/dc_motor/metadata.yaml) | Closed | Synthetic | 2 | 0 + 2 | Affine (4th) | Linear | No | Dainarx | 256/64 |
-| [Jumper Dog](systems/jumper_dog/metadata.yaml) | Closed | Synthetic | 2 | 0 + 4 | Affine | Linear | No | Dainarx | 256/64 |
+| [Underdamped system](systems/underdamped_system/metadata.yaml) | Closed | Synthetic | 2 | 0 + 2 | Affine (2nd) | Linear | No | Dainarx | 256/64 |
+| [DC motor](systems/dc_motor/metadata.yaml) | Closed | Synthetic | 2 | 0 + 2 | Affine (4th) | Linear | No | Dainarx | 256/64 |
+| [Jumper dog](systems/jumper_dog/metadata.yaml) | Closed | Synthetic | 2 | 0 + 4 | Affine | Linear | No | Dainarx | 256/64 |
 | [LotkaVolterra](systems/lotkavolterra/metadata.yaml) | Closed | Synthetic | 2 | 0 + 2 | Polynomial | Nonlinear | No | Dainarx | 256/64 |
 | [Spacecraft](systems/spacecraft/metadata.yaml) | Closed | Synthetic | 2 | 0 + 4 | Nonlinear | Nonlinear | No | Dainarx | 256/64 |
-| [Biological System](systems/biological_system/metadata.yaml) | Closed | Synthetic | 2 | 0 + 9 | Polynomial | Linear | No | Dainarx | 256/64 |
-| [ECG Signals](systems/ecg_signals/metadata.yaml) | Closed | Real-world | --- | 0 + 1 | Nonlinear | Implicit | No | HySynth | 3/0 |
-| [Bouncing Ball](systems/bouncing_ball/metadata.yaml) | Closed | Synthetic | 1 | 0 + 2 | Affine | Linear | Yes | HSCC25 | 256/64 |
-| [Simple Non-Polynomial](systems/simple_non_polynomial/metadata.yaml) | Closed | Synthetic | 2 | 0 + 1 | Nonlinear | Linear | Yes | Dainarx | 256/64 |
-| [Heating with Input](systems/heating_with_input/metadata.yaml) | Open | Synthetic | 2 | 1 + 1 | Affine | Linear | No | FaMoS | 256/64 |
-| [Multi-room Heating](systems/multi_room_heating/metadata.yaml) | Open | Synthetic | 6 | 1 + 3 | Affine | Linear | No | hautlearn | 256/64 |
-| [Two-tank System](systems/two_tank_system/metadata.yaml) | Open | Synthetic | 4 | 1 + 2 | Affine | Constant | No | HybridLearner | 256/64 |
-| [Cooperative Vehicles](systems/cooperative_vehicles/metadata.yaml) | Open | Synthetic | 2 | 1 + 9 | Linear | Fixed Time | No | hautlearn | 256/64 |
-| [Aircraft](systems/aircraft/metadata.yaml) | Open | Synthetic | 1 | 2 + 3 | Nonlinear | None | No | HSCC25 | 256/64 |
-| [Engine Timing Model](systems/engine_timing_model/metadata.yaml) | Open | Real-world* | --- | 2 + 1 | Nonlinear | Implicit | No | HybridLearner | 64/40 |
-| [F1tenth Car](systems/f1tenth_car/metadata.yaml) | Open | Real-world | --- | 2 + 4 | Nonlinear | Implicit | No | HSCC25 | 36/5 |
-| [Controlled Underdamped](systems/controlled_underdamped/metadata.yaml) | Open | Synthetic | 4 | 1 + 2 | Affine (2nd) | Linear | Yes | Dainarx | 256/64 |
-| [Duffing Oscillator](systems/duffing_oscillator/metadata.yaml) | Open | Synthetic | 2 | 1 + 1 | Polynomial (2nd) | Nonlinear | Yes | Dainarx | 256/64 |
+| [Biological system](systems/biological_system/metadata.yaml) | Closed | Synthetic | 2 | 0 + 9 | Polynomial | Linear | No | Dainarx | 256/64 |
+| [ECG signals](systems/ecg_signals/metadata.yaml) | Closed | Real-world | --- | 0 + 1 | Nonlinear | Not specified | No | HySynth | 3/0 |
+| [Bouncing ball](systems/bouncing_ball/metadata.yaml) | Closed | Synthetic | 1 | 0 + 2 | Affine | Linear | Yes | HSCC25 | 256/64 |
+| [Simple non-polynomial](systems/simple_non_polynomial/metadata.yaml) | Closed | Synthetic | 2 | 0 + 1 | Nonlinear | Linear | Yes | Dainarx | 256/64 |
+| [Heating with input](systems/heating_with_input/metadata.yaml) | Open | Synthetic | 2 | 1 + 1 | Affine | Linear | No | FaMoS | 256/64 |
+| [Multi-room heating](systems/multi_room_heating/metadata.yaml) | Open | Synthetic | 6 | 1 + 3 | Affine | Linear | No | hautlearn | 256/64 |
+| [Two-tank system](systems/two_tank_system/metadata.yaml) | Open | Synthetic | 4 | 1 + 2 | Affine | Constant | No | HybridLearner | 256/64 |
+| [Cooperative vehicles](systems/cooperative_vehicles/metadata.yaml) | Open | Synthetic | 2 | 1 + 9 | Linear | Fixed time | No | hautlearn | 256/64 |
+| [Aircraft](systems/aircraft/metadata.yaml) | Open | Synthetic | 1 | 2 + 3 | Nonlinear | No guards | No | HSCC25 | 256/64 |
+| [Engine timing model](systems/engine_timing_model/metadata.yaml) | Open | Real-world* | --- | 2 + 1 | Nonlinear | Not specified | No | HybridLearner | 64/40 |
+| [F1tenth car](systems/f1tenth_car/metadata.yaml) | Open | Real-world | --- | 2 + 4 | Nonlinear | Not specified | No | HSCC25 | 36/5 |
+| [Controlled underdamped](systems/controlled_underdamped/metadata.yaml) | Open | Synthetic | 4 | 1 + 2 | Affine (2nd) | Linear | Yes | Dainarx | 256/64 |
+| [Duffing oscillator](systems/duffing_oscillator/metadata.yaml) | Open | Synthetic | 2 | 1 + 1 | Polynomial (2nd) | Nonlinear | Yes | Dainarx | 256/64 |
 <!-- CATALOG:END -->
 
 *Real-world\* denotes data generated by a high-fidelity industrial simulator.*
 
+`Not specified` indicates that the available information is insufficient to classify the guards.
+
 ## License and sources
 
 Project contributions and generated datasets use the [MIT License](LICENSE).
-The ECG Signals dataset retains HySynth's [MIT License](datasets/ecg_signals/LICENSE),
-the Engine Timing Model dataset retains HybridLearner's
-[GNU GPL version 3](datasets/engine_timing_model/LICENSE), and the F1tenth Car dataset
+The ECG signals dataset retains HySynth's [MIT License](datasets/ecg_signals/LICENSE),
+the Engine timing model dataset retains HybridLearner's
+[GNU GPL version 3](datasets/engine_timing_model/LICENSE), and the F1tenth car dataset
 uses [CC0-1.0](datasets/f1tenth_car/LICENSE).
 System metadata identify the sources; dataset manifests record the applicable
 data license and, for converted source CSV files, their source paths and format changes.

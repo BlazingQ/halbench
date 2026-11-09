@@ -1,6 +1,6 @@
 schema: halbench-dataset-v1
 system_id: two_tank_system
-name: Two-tank System
+name: Two-tank system
 source:
   work: HybridLearner
   repo_url: https://github.com/rajgurung777/HybridLearner

@@ -1,6 +1,6 @@
 schema: halbench-dataset-v1
 system_id: heating_with_input
-name: Heating with Input
+name: Heating with input
 source:
   work: FaMoS
   repo_url: https://doi.org/10.5281/zenodo.10657936

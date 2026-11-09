@@ -1,6 +1,6 @@
 schema: halbench-dataset-v1
 system_id: cooperative_vehicles
-name: Cooperative Vehicles
+name: Cooperative vehicles
 source:
   work: hautlearn
   repo_url: https://github.com/verivital/hautlearn

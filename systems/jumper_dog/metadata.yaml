@@ -1,6 +1,6 @@
 schema: halbench-dataset-v1
 system_id: jumper_dog
-name: Jumper Dog
+name: Jumper dog
 source:
   work: Dainarx
   repo_url: https://github.com/FICTION-ZJU/Dainarx

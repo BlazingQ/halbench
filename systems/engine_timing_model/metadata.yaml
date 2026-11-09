@@ -1,6 +1,6 @@
 schema: halbench-dataset-v1
 system_id: engine_timing_model
-name: Engine Timing Model
+name: Engine timing model
 source:
   work: HybridLearner
   repo_url: https://github.com/rajgurung777/HybridLearner
@@ -17,7 +17,7 @@ dim:
   output: 1
 dynamics: nonlinear
 dynamics_order: unknown
-guard: implicit
+guard: not-specified
 reset: 'no'
 variables:
   states:

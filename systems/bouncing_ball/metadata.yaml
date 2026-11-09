@@ -1,6 +1,6 @@
 schema: halbench-dataset-v1
 system_id: bouncing_ball
-name: Bouncing Ball
+name: Bouncing ball
 source:
   work: HSCC25
   repo_url: https://codeocean.com/capsule/1724008/tree/v1

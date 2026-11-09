@@ -1,6 +1,6 @@
 schema: halbench-dataset-v1
 system_id: biological_system
-name: Biological System
+name: Biological system
 source:
   work: Dainarx
   repo_url: https://github.com/FICTION-ZJU/Dainarx

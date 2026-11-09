@@ -1,6 +1,6 @@
 schema: halbench-dataset-v1
 system_id: buck_converter
-name: Buck Converter
+name: Buck converter
 source:
   work: FaMoS
   repo_url: https://doi.org/10.5281/zenodo.10657936

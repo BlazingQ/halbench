@@ -1,6 +1,6 @@
 schema: halbench-dataset-v1
 system_id: dc_motor
-name: DC Motor
+name: DC motor
 source:
   work: Dainarx
   repo_url: https://github.com/FICTION-ZJU/Dainarx

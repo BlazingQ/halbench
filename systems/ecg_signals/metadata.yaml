@@ -1,6 +1,6 @@
 schema: halbench-dataset-v1
 system_id: ecg_signals
-name: ECG Signals
+name: ECG signals
 source:
   work: HySynth
   repo_url: https://github.com/HySynth/HySynth
@@ -17,7 +17,7 @@ dim:
   output: 1
 dynamics: nonlinear
 dynamics_order: unknown
-guard: implicit
+guard: not-specified
 reset: 'no'
 variables:
   states:

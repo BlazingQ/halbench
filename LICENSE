@@ -24,6 +24,6 @@ Scope
 -----
 The MIT license applies to project-authored code, documentation, metadata,
 generated trace collections and original contributions to SX encodings.
-Source datasets retain their upstream licenses: ECG Signals (MIT), Engine
-Timing Model (GNU GPL version 3), and F1tenth Car (CC0-1.0). These licenses are
+Source datasets retain their upstream licenses: ECG signals (MIT), Engine
+timing model (GNU GPL version 3), and F1tenth car (CC0-1.0). These licenses are
 provided in datasets/<system_id>/LICENSE and recorded in the dataset manifests.
